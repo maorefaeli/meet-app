@@ -1,2 +1,2 @@
 # meet-app
-iOS Project - DressApp
+iOS Project: MeetApp - just learn together
