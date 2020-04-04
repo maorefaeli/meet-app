@@ -8,46 +8,42 @@
 
 import UIKit
 import FirebaseDatabase
-import FirebaseFirestore
 
 class HomeViewController: UIViewController {
 
     @IBOutlet var lblWelcome: UILabel!
     
-    let database = Firestore.firestore()
-    
+    var ref:DatabaseReference?
     var uid = ""
+    var name = ""
+    var user = User.init()
+    
+    func getUserUserById(uid: String) {
+        //  Setup firebase database
+        ref = Database.database().reference()
+        ref?.child("users").child(uid).observeSingleEvent(of: .value, with: { (snapshot) in
+          // Get profile value
+          let value = snapshot.value as? NSDictionary
+          if value == nil {
+            self.performSegue(withIdentifier: "homeToProfile", sender: Any?.self)
+          } else {
+            self.user = User.init(uid: uid, name: value?["name"] as? String ?? "")
+            self.lblWelcome.text = "Welcome, \(self.user.name)"
+            }
+          }) { (error) in
+            print(error.localizedDescription)
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         let preferences = UserDefaults.standard
-
         let uidkey = "uid"
-
         if preferences.object(forKey: uidkey) == nil {
             //  Doesn't exist
         } else {
             let uid = preferences.string(forKey: uidkey)
-            self.lblWelcome.text = "Welcome, \(String(describing: uid))"
+            getUserUserById(uid: uid!)
         }
-        //  this is how to add new document
-        //  self.database.collection("profiles").addDocument(data: ["year":2017, "type":"cab", "label":"something"])
-        let profiles = self.database.collection("profiles").whereField("uid", isEqualTo: self.uid)
-        if profiles == nil {
-            performSegue(withIdentifier: "homeToProfile", sender: Any?.self)
-        }
-        
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

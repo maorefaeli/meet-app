@@ -7,24 +7,25 @@
 //
 
 import UIKit
+import FirebaseDatabase
+import FirebaseAuth
 
 class ProfileViewController: UIViewController {
 
+    @IBOutlet var tbName: UITextField!
+    var ref:DatabaseReference?
+    
+    @IBAction func updateProfile(_ sender: Any) {
+        var user: User
+        user = User.init(uid: Auth.auth().currentUser!.uid, name: tbName.text!)
+
+        ref = Database.database().reference()
+        
+        ref?.child("users").child(user.uid).setValue(["name": user.name])
+        performSegue(withIdentifier: "profileToHome", sender: Any?.self)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
