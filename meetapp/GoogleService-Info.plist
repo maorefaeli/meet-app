@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>337348837179-fs71273u9jf0g2ems3s3nofc166egd3g.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.337348837179-fs71273u9jf0g2ems3s3nofc166egd3g</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDoQsrdgOhwBipxgEVuCawgjbCzfojmAQ4</string>
+	<key>GCM_SENDER_ID</key>
+	<string>337348837179</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>meetapp.meetapp</string>
+	<key>PROJECT_ID</key>
+	<string>meetapp-f23d1</string>
+	<key>STORAGE_BUCKET</key>
+	<string>meetapp-f23d1.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:337348837179:ios:718b334a28b2e3c125011e</string>
+	<key>DATABASE_URL</key>
+	<string>https://meetapp-f23d1.firebaseio.com</string>
+</dict>
+</plist>
