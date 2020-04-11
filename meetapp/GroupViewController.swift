@@ -7,19 +7,69 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseDatabase
 
 class GroupViewController: UIViewController {
-
     @IBOutlet var tbGroupName: UITextField!
     @IBOutlet var tbGroupCity: UITextField!
     @IBOutlet var tbTopic: UITextField!
     @IBOutlet var scLevel: UISegmentedControl!
     
+    var ref:DatabaseReference?
+    
+    func getGroupByName(groupname: String) -> Bool {
+        var res = false
+        //  Setup firebase database
+        ref = Database.database().reference()
+        ref?.child("groups").child(groupname).observeSingleEvent(of: .value, with: { (snapshot) in
+          // Get group value
+          let value = snapshot.value as? NSDictionary
+          if value == nil {
+            res = false
+          } else {
+            res = true
+            // create the alert
+            let alert = UIAlertController(title: "Cannot create a new group", message: "Group name already exist", preferredStyle: UIAlertController.Style.alert)
+            // add an action (button)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+            // show the alert
+            self.present(alert, animated: true, completion: nil)
+            }
+          }) { (error) in
+            print(error.localizedDescription)
+        }
+        return res
+    }
+    
     @IBAction func createGroup(_ sender: Any) {
+        var group: Group
+        var level: String
+        var guid: String
+        var members: [String] = []
+        
+        switch scLevel.selectedSegmentIndex {
+        case 0:
+            level = "Begginer"
+        case 1:
+            level = "Intermidate"
+        case 2:
+            level = "Advanced"
+        default:
+            level = "Begginer"
+        }
+        
+        guid = "\(NSDate().timeIntervalSince1970)"+"\(Auth.auth().currentUser!.uid)"
+        guid = guid.replacingOccurrences(of: ".", with: "")
+        members.append(Auth.auth().currentUser!.uid)
+    
+        group = Group.init(guid: guid, uid: Auth.auth().currentUser!.uid, name: tbGroupName.text!, level: level, city: tbGroupCity.text!, topic: tbTopic.text!)//, members: members)
+        ref = Database.database().reference()
+        ref?.child("groups").child(group.guid).setValue(["guid": group.guid, "owner": group.uid, "name": group.name, "level": group.level, "city": group.city, "topic": group.topic])
+        performSegue(withIdentifier: "createGroupToHome", sender: Any?.self)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
 }

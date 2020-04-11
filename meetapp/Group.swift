@@ -9,23 +9,27 @@
 import Foundation
 
 class Group {
+    var guid: String = ""
     var uid: String = ""
     var name: String = ""
     var level: String = ""
     var city: String = ""
     var topic: String = ""
+    //var members: [String] = []
     
     // Default Constructor (No parameter)
     init()  {
          
     }
      
-    init (uid: String, name: String, level: String, city: String, topic: String)  {
+    init (guid: String, uid: String, name: String, level: String, city: String, topic: String/*, members: [String]*/)  {
+        self.guid = guid
         self.uid = uid
         self.name = name
         self.city = city
         self.level = level
         self.topic = topic
+        //self.members = members
     }
      
 }

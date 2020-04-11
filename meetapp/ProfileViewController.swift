@@ -24,6 +24,9 @@ class ProfileViewController: UIViewController {
         ref?.child("users").child(user.uid).setValue(["name": user.name])
         performSegue(withIdentifier: "profileToHome", sender: Any?.self)
     }
+    @IBAction func showMyGroups(_ sender: Any) {
+        performSegue(withIdentifier: "profileToMygroups", sender: Any?.self)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.

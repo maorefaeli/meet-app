@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -147,6 +148,68 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ZkB-Ww-v4i">
+                                <rect key="frame" x="0.0" y="199" width="414" height="560"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="I8a-T0-y23">
+                                    <size key="itemSize" width="179" height="140"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="homeGroupCell" id="Yzl-zs-bHh" customClass="CollectionViewCell" customModule="meetapp" customModuleProvider="target">
+                                        <rect key="frame" x="32" y="0.0" width="350" height="200"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="7vW-qc-R1l">
+                                            <rect key="frame" x="0.0" y="0.0" width="350" height="200"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RDa-df-Ma9">
+                                                    <rect key="frame" x="16" y="14" width="318" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xXa-bT-TxO">
+                                                    <rect key="frame" x="16" y="65" width="318" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kAS-yh-uvs">
+                                                    <rect key="frame" x="16" y="108" width="318" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XwY-p4-qzy">
+                                                    <rect key="frame" x="16" y="148" width="318" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="350" height="200"/>
+                                        <connections>
+                                            <outlet property="lblCity" destination="XwY-p4-qzy" id="AmY-6w-aaz"/>
+                                            <outlet property="lblLevel" destination="kAS-yh-uvs" id="9jE-Yj-6Wq"/>
+                                            <outlet property="lblName" destination="RDa-df-Ma9" id="QM8-S5-p60"/>
+                                            <outlet property="lblTopic" destination="xXa-bT-TxO" id="VWv-1q-Mtw"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="rZq-m8-jSX" id="lvn-b1-naP"/>
+                                    <outlet property="delegate" destination="rZq-m8-jSX" id="d5I-DA-Chs"/>
+                                </connections>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="WP0-32-vUx"/>
@@ -154,6 +217,7 @@
                     <tabBarItem key="tabBarItem" title="" image="house" catalog="system" id="g9V-be-TPB"/>
                     <navigationItem key="navigationItem" id="xBi-Ac-H6t"/>
                     <connections>
+                        <outlet property="groupsCollectionView" destination="ZkB-Ww-v4i" id="N2C-ln-NTT"/>
                         <outlet property="lblWelcome" destination="93u-23-CAQ" id="vMB-2G-ASe"/>
                         <segue destination="1qa-Nd-fHG" kind="show" id="MV0-iB-ndr"/>
                         <segue destination="hGO-LU-XjN" kind="show" identifier="homeToProfile" id="bpL-IP-JQy"/>
@@ -161,7 +225,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RM2-bh-CbZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4849" y="467"/>
+            <point key="canvasLocation" x="-4849.275362318841" y="466.74107142857139"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="4tP-DX-Ev4">
@@ -277,6 +341,7 @@
                         <outlet property="tbGroupCity" destination="xsU-gH-7pi" id="eRL-dQ-Uxx"/>
                         <outlet property="tbGroupName" destination="CoR-MD-EVV" id="xxi-Xq-I8z"/>
                         <outlet property="tbTopic" destination="Pw0-Lx-BZY" id="6w4-0h-vrf"/>
+                        <segue destination="meA-Dw-g1r" kind="show" identifier="createGroupToHome" id="oVF-jd-NFt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OyD-aw-G09" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -335,6 +400,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="My groups &gt;"/>
+                                <connections>
+                                    <action selector="showMyGroups:" destination="hGO-LU-XjN" eventType="touchUpInside" id="d7l-l3-CAv"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Or" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aoL-3u-Cc6">
                                 <rect key="frame" x="199" y="409" width="16" height="17"/>
@@ -357,18 +425,18 @@
                     <navigationItem key="navigationItem" id="fth-d5-Gub"/>
                     <connections>
                         <outlet property="tbName" destination="TUL-GY-Ejw" id="iq0-jH-Twb"/>
-                        <segue destination="iRk-0Q-HC2" kind="show" id="Jcg-TX-ldF"/>
-                        <segue destination="rZq-m8-jSX" kind="show" identifier="profileToHome" id="nLm-yi-45g"/>
+                        <segue destination="iRk-0Q-HC2" kind="show" identifier="profileToMygroups" id="Jcg-TX-ldF"/>
+                        <segue destination="meA-Dw-g1r" kind="show" identifier="profileToHome" id="Gw6-lL-Y8a"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q6O-dD-47C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2994" y="467"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Profile To Mygroups-->
         <scene sceneID="81Z-OP-iYb">
             <objects>
-                <tableViewController id="iRk-0Q-HC2" sceneMemberID="viewController">
+                <tableViewController id="iRk-0Q-HC2" customClass="profileToMygroups" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="wIg-OO-jTf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -403,6 +471,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="bpL-IP-JQy"/>
-        <segue reference="nLm-yi-45g"/>
+        <segue reference="Gw6-lL-Y8a"/>
     </inferredMetricsTieBreakers>
 </document>
