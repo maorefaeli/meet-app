@@ -21,8 +21,8 @@ class Group {
     init()  {
          
     }
-     
-    init (guid: String, uid: String, name: String, level: String, city: String, topic: String/*, members: [String]*/)  {
+    
+    init (guid: String = "", uid: String, name: String, level: String, city: String, topic: String/*, members: [String]*/)  {
         self.guid = guid
         self.uid = uid
         self.name = name
@@ -31,5 +31,8 @@ class Group {
         self.topic = topic
         //self.members = members
     }
-     
+ 
+    func generateGuid() {
+        guid = UUID().uuidString
+    }
 }

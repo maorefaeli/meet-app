@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		210E5613CB702B876BB4A78C /* Pods_meetappUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77BE431C4B3E8BAA20E894CE /* Pods_meetappUITests.framework */; };
-		6079509F6BE1587FBC51F32A /* Pods_meetappTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DA914B0F9BCC840A810DBFE /* Pods_meetappTests.framework */; };
 		845CE8EE2441DAE0006C5C08 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845CE8ED2441DAE0006C5C08 /* CollectionViewCell.swift */; };
 		84BB25BB241980D700ED6A60 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BB25BA241980D700ED6A60 /* HomeViewController.swift */; };
 		84BB25BD2419841700ED6A60 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BB25BC2419841700ED6A60 /* ProfileViewController.swift */; };
@@ -21,28 +19,10 @@
 		84F9B671241926A90007FFB6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84F9B66F241926A90007FFB6 /* Main.storyboard */; };
 		84F9B673241926AC0007FFB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84F9B672241926AC0007FFB6 /* Assets.xcassets */; };
 		84F9B676241926AC0007FFB6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84F9B674241926AC0007FFB6 /* LaunchScreen.storyboard */; };
-		84F9B681241926AD0007FFB6 /* meetappTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F9B680241926AD0007FFB6 /* meetappTests.swift */; };
-		84F9B68C241926AD0007FFB6 /* meetappUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F9B68B241926AD0007FFB6 /* meetappUITests.swift */; };
 		AB121CA647D5027A5A5A6478 /* Pods_meetapp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92CCCD54270BB877A373F971 /* Pods_meetapp.framework */; };
 		EEA28DCD24420CA700E2231E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EEA28DCC24420CA700E2231E /* GoogleService-Info.plist */; };
+		EEA28DD324488BD600E2231E /* DB.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA28DD224488BD600E2231E /* DB.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		84F9B67D241926AD0007FFB6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 84F9B65E241926A90007FFB6 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 84F9B665241926A90007FFB6;
-			remoteInfo = meetapp;
-		};
-		84F9B688241926AD0007FFB6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 84F9B65E241926A90007FFB6 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 84F9B665241926A90007FFB6;
-			remoteInfo = meetapp;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		561AF8FB11EF4C46AFA07831 /* Pods-meetappUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-meetappUITests.debug.xcconfig"; path = "Target Support Files/Pods-meetappUITests/Pods-meetappUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -61,12 +41,6 @@
 		84F9B672241926AC0007FFB6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84F9B675241926AC0007FFB6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84F9B677241926AC0007FFB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		84F9B67C241926AD0007FFB6 /* meetappTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = meetappTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		84F9B680241926AD0007FFB6 /* meetappTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = meetappTests.swift; sourceTree = "<group>"; };
-		84F9B682241926AD0007FFB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		84F9B687241926AD0007FFB6 /* meetappUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = meetappUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		84F9B68B241926AD0007FFB6 /* meetappUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = meetappUITests.swift; sourceTree = "<group>"; };
-		84F9B68D241926AD0007FFB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8DA914B0F9BCC840A810DBFE /* Pods_meetappTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_meetappTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		904569036A272499107123E6 /* Pods-meetapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-meetapp.debug.xcconfig"; path = "Target Support Files/Pods-meetapp/Pods-meetapp.debug.xcconfig"; sourceTree = "<group>"; };
 		92CCCD54270BB877A373F971 /* Pods_meetapp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_meetapp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -75,6 +49,7 @@
 		AD31209DD3058B265F72CA4A /* Pods-meetappTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-meetappTests.debug.xcconfig"; path = "Target Support Files/Pods-meetappTests/Pods-meetappTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D9C61AF742706995002D2727 /* Pods-meetappTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-meetappTests.release.xcconfig"; path = "Target Support Files/Pods-meetappTests/Pods-meetappTests.release.xcconfig"; sourceTree = "<group>"; };
 		EEA28DCC24420CA700E2231E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		EEA28DD224488BD600E2231E /* DB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DB.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,22 +58,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB121CA647D5027A5A5A6478 /* Pods_meetapp.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		84F9B679241926AD0007FFB6 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6079509F6BE1587FBC51F32A /* Pods_meetappTests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		84F9B684241926AD0007FFB6 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				210E5613CB702B876BB4A78C /* Pods_meetappUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,8 +78,6 @@
 			isa = PBXGroup;
 			children = (
 				84F9B668241926A90007FFB6 /* meetapp */,
-				84F9B67F241926AD0007FFB6 /* meetappTests */,
-				84F9B68A241926AD0007FFB6 /* meetappUITests */,
 				84F9B667241926A90007FFB6 /* Products */,
 				D58FC265C052692D03D24560 /* Pods */,
 				2312FDACDDC60BF54E679730 /* Frameworks */,
@@ -131,8 +88,6 @@
 			isa = PBXGroup;
 			children = (
 				84F9B666241926A90007FFB6 /* meetapp.app */,
-				84F9B67C241926AD0007FFB6 /* meetappTests.xctest */,
-				84F9B687241926AD0007FFB6 /* meetappUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -140,6 +95,8 @@
 		84F9B668241926A90007FFB6 /* meetapp */ = {
 			isa = PBXGroup;
 			children = (
+				EEA28DD424488DBD00E2231E /* Entities */,
+				EEA28DD124488BC400E2231E /* Services */,
 				84F9B669241926A90007FFB6 /* AppDelegate.swift */,
 				84F9B66B241926A90007FFB6 /* SceneDelegate.swift */,
 				84F9B66D241926A90007FFB6 /* ViewController.swift */,
@@ -151,29 +108,9 @@
 				84F9B677241926AC0007FFB6 /* Info.plist */,
 				84BB25BA241980D700ED6A60 /* HomeViewController.swift */,
 				84BB25BC2419841700ED6A60 /* ProfileViewController.swift */,
-				84ECFC362438F7E9005A3DFF /* User.swift */,
-				84ECFC382439084E005A3DFF /* Group.swift */,
 				84ECFC3A24390975005A3DFF /* GroupViewController.swift */,
 			);
 			path = meetapp;
-			sourceTree = "<group>";
-		};
-		84F9B67F241926AD0007FFB6 /* meetappTests */ = {
-			isa = PBXGroup;
-			children = (
-				84F9B680241926AD0007FFB6 /* meetappTests.swift */,
-				84F9B682241926AD0007FFB6 /* Info.plist */,
-			);
-			path = meetappTests;
-			sourceTree = "<group>";
-		};
-		84F9B68A241926AD0007FFB6 /* meetappUITests */ = {
-			isa = PBXGroup;
-			children = (
-				84F9B68B241926AD0007FFB6 /* meetappUITests.swift */,
-				84F9B68D241926AD0007FFB6 /* Info.plist */,
-			);
-			path = meetappUITests;
 			sourceTree = "<group>";
 		};
 		D58FC265C052692D03D24560 /* Pods */ = {
@@ -187,6 +124,23 @@
 				9BD8C3EB3150DCB72BCBD548 /* Pods-meetappUITests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		EEA28DD124488BC400E2231E /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				EEA28DD224488BD600E2231E /* DB.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		EEA28DD424488DBD00E2231E /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				84ECFC362438F7E9005A3DFF /* User.swift */,
+				84ECFC382439084E005A3DFF /* Group.swift */,
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,44 +166,6 @@
 			productReference = 84F9B666241926A90007FFB6 /* meetapp.app */;
 			productType = "com.apple.product-type.application";
 		};
-		84F9B67B241926AD0007FFB6 /* meetappTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 84F9B693241926AD0007FFB6 /* Build configuration list for PBXNativeTarget "meetappTests" */;
-			buildPhases = (
-				C946A9D2545568D6C0C93E68 /* [CP] Check Pods Manifest.lock */,
-				84F9B678241926AD0007FFB6 /* Sources */,
-				84F9B679241926AD0007FFB6 /* Frameworks */,
-				84F9B67A241926AD0007FFB6 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				84F9B67E241926AD0007FFB6 /* PBXTargetDependency */,
-			);
-			name = meetappTests;
-			productName = meetappTests;
-			productReference = 84F9B67C241926AD0007FFB6 /* meetappTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		84F9B686241926AD0007FFB6 /* meetappUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 84F9B696241926AD0007FFB6 /* Build configuration list for PBXNativeTarget "meetappUITests" */;
-			buildPhases = (
-				3A75AEF52360885DAC4371E5 /* [CP] Check Pods Manifest.lock */,
-				84F9B683241926AD0007FFB6 /* Sources */,
-				84F9B684241926AD0007FFB6 /* Frameworks */,
-				84F9B685241926AD0007FFB6 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				84F9B689241926AD0007FFB6 /* PBXTargetDependency */,
-			);
-			name = meetappUITests;
-			productName = meetappUITests;
-			productReference = 84F9B687241926AD0007FFB6 /* meetappUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -262,14 +178,6 @@
 				TargetAttributes = {
 					84F9B665241926A90007FFB6 = {
 						CreatedOnToolsVersion = 11.2;
-					};
-					84F9B67B241926AD0007FFB6 = {
-						CreatedOnToolsVersion = 11.2;
-						TestTargetID = 84F9B665241926A90007FFB6;
-					};
-					84F9B686241926AD0007FFB6 = {
-						CreatedOnToolsVersion = 11.2;
-						TestTargetID = 84F9B665241926A90007FFB6;
 					};
 				};
 			};
@@ -287,8 +195,6 @@
 			projectRoot = "";
 			targets = (
 				84F9B665241926A90007FFB6 /* meetapp */,
-				84F9B67B241926AD0007FFB6 /* meetappTests */,
-				84F9B686241926AD0007FFB6 /* meetappUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -302,20 +208,6 @@
 				EEA28DCD24420CA700E2231E /* GoogleService-Info.plist in Resources */,
 				84F9B673241926AC0007FFB6 /* Assets.xcassets in Resources */,
 				84F9B671241926A90007FFB6 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		84F9B67A241926AD0007FFB6 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		84F9B685241926AD0007FFB6 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,28 +229,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-meetapp/Pods-meetapp-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		3A75AEF52360885DAC4371E5 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-meetappUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		81C86F259FBF1EDB9CC6D504 /* [CP] Check Pods Manifest.lock */ = {
@@ -400,28 +270,6 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-meetapp/Pods-meetapp-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C946A9D2545568D6C0C93E68 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-meetappTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -432,6 +280,7 @@
 				84ECFC3B24390975005A3DFF /* GroupViewController.swift in Sources */,
 				84ECFC392439084E005A3DFF /* Group.swift in Sources */,
 				845CE8EE2441DAE0006C5C08 /* CollectionViewCell.swift in Sources */,
+				EEA28DD324488BD600E2231E /* DB.swift in Sources */,
 				84F9B66E241926A90007FFB6 /* ViewController.swift in Sources */,
 				84ECFC372438F7E9005A3DFF /* User.swift in Sources */,
 				84F9B66A241926A90007FFB6 /* AppDelegate.swift in Sources */,
@@ -441,36 +290,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		84F9B678241926AD0007FFB6 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				84F9B681241926AD0007FFB6 /* meetappTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		84F9B683241926AD0007FFB6 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				84F9B68C241926AD0007FFB6 /* meetappUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		84F9B67E241926AD0007FFB6 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 84F9B665241926A90007FFB6 /* meetapp */;
-			targetProxy = 84F9B67D241926AD0007FFB6 /* PBXContainerItemProxy */;
-		};
-		84F9B689241926AD0007FFB6 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 84F9B665241926A90007FFB6 /* meetapp */;
-			targetProxy = 84F9B688241926AD0007FFB6 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		84F9B66F241926A90007FFB6 /* Main.storyboard */ = {
@@ -642,90 +462,6 @@
 			};
 			name = Release;
 		};
-		84F9B694241926AD0007FFB6 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = AD31209DD3058B265F72CA4A /* Pods-meetappTests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = meetappTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = meetapp.meetappTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/meetapp.app/meetapp";
-			};
-			name = Debug;
-		};
-		84F9B695241926AD0007FFB6 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D9C61AF742706995002D2727 /* Pods-meetappTests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = meetappTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = meetapp.meetappTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/meetapp.app/meetapp";
-			};
-			name = Release;
-		};
-		84F9B697241926AD0007FFB6 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 561AF8FB11EF4C46AFA07831 /* Pods-meetappUITests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = meetappUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = meetapp.meetappUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = meetapp;
-			};
-			name = Debug;
-		};
-		84F9B698241926AD0007FFB6 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9BD8C3EB3150DCB72BCBD548 /* Pods-meetappUITests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = meetappUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = meetapp.meetappUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = meetapp;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -743,24 +479,6 @@
 			buildConfigurations = (
 				84F9B691241926AD0007FFB6 /* Debug */,
 				84F9B692241926AD0007FFB6 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		84F9B693241926AD0007FFB6 /* Build configuration list for PBXNativeTarget "meetappTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				84F9B694241926AD0007FFB6 /* Debug */,
-				84F9B695241926AD0007FFB6 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		84F9B696241926AD0007FFB6 /* Build configuration list for PBXNativeTarget "meetappUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				84F9B697241926AD0007FFB6 /* Debug */,
-				84F9B698241926AD0007FFB6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

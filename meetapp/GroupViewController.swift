@@ -43,10 +43,7 @@ class GroupViewController: UIViewController {
     }
     
     @IBAction func createGroup(_ sender: Any) {
-        var group: Group
         var level: String
-        var guid: String
-        var members: [String] = []
         
         switch scLevel.selectedSegmentIndex {
         case 0:
@@ -59,13 +56,16 @@ class GroupViewController: UIViewController {
             level = "Begginer"
         }
         
-        guid = "\(NSDate().timeIntervalSince1970)"+"\(Auth.auth().currentUser!.uid)"
-        guid = guid.replacingOccurrences(of: ".", with: "")
-        members.append(Auth.auth().currentUser!.uid)
-    
-        group = Group.init(guid: guid, uid: Auth.auth().currentUser!.uid, name: tbGroupName.text!, level: level, city: tbGroupCity.text!, topic: tbTopic.text!)//, members: members)
-        ref = Database.database().reference()
-        ref?.child("groups").child(group.guid).setValue(["guid": group.guid, "owner": group.uid, "name": group.name, "level": group.level, "city": group.city, "topic": group.topic])
+        let group: Group = Group(
+            uid: Auth.auth().currentUser!.uid,
+            name: tbGroupName.text!,
+            level: level,
+            city: tbGroupCity.text!,
+            topic: tbTopic.text!
+            // members: [Auth.auth().currentUser!.uid]
+        )
+        group.generateGuid()
+        DB.shared.groups.create(group)
         performSegue(withIdentifier: "createGroupToHome", sender: Any?.self)
     }
     override func viewDidLoad() {

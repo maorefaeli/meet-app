@@ -22,21 +22,19 @@ class ProfileViewController: UIViewController {
     var name: String = ""
     
     func getUserProfile(uid: String) {
-        //  Setup firebase database
-        ref = Database.database().reference()
-        ref?.child("users").child(uid).observeSingleEvent(of: .value, with: { (snapshot) in
-            let value = snapshot.value as? NSDictionary
-            self.imageURL = value?["userPhoto"] as? String ?? ""
-            self.name = value?["name"] as? String ?? ""
+        DB.shared.users.get(uid) { (user: User) in
+            self.name = user.name
             if self.name != "" {
                 self.tbName.text = self.name
             }
+            
+            self.imageURL = user.imageURL
             if self.imageURL != "" {
                 self.getImage(url: self.imageURL) { (image) in
                     self.userImage.image = image
                 }
             }
-        })
+        }
     }
     
     func getImage(url:String, callback:@escaping (UIImage?)->Void) {
@@ -56,10 +54,8 @@ class ProfileViewController: UIViewController {
         self.userImage.image = nil
     }
     @IBAction func updateProfile(_ sender: Any) {
-        var user: User
-        user = User.init(uid: Auth.auth().currentUser!.uid, name: tbName.text!)
-        ref = Database.database().reference()
-        ref?.child("users").child(user.uid).updateChildValues(["name": user.name, "userPhoto": self.imageURL])
+        let user: User = User(uid: Auth.auth().currentUser!.uid, name: tbName.text!, imageURL: self.imageURL)
+        DB.shared.users.update(user)
         performSegue(withIdentifier: "profileToHome", sender: Any?.self)
     }
     @IBAction func showMyGroups(_ sender: Any) {

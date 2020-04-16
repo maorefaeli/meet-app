@@ -52,9 +52,9 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
             for child in snapshot.children {
                 let snap = child as! DataSnapshot
                 let groupDict = snap.value as! [String: Any]
-                let groupElement: Group = Group.init(guid: groupDict["guid"] as! String, uid: groupDict["owner"] as! String,
-                                                     name: groupDict["name"] as! String, level: groupDict["level"] as! String,
-                                                     city: groupDict["city"] as! String, topic: groupDict["topic"] as! String)//, members: groupDict[""])
+                let groupElement: Group = Group(guid: groupDict["guid"] as! String, uid: groupDict["owner"] as! String,
+                                                name: groupDict["name"] as! String, level: groupDict["level"] as! String,
+                                                city: groupDict["city"] as! String, topic: groupDict["topic"] as! String)//, members: groupDict[""])
                 self.groups.append(groupElement)
                 print(self.groups[0].uid)
             }
