@@ -9,16 +9,40 @@
 import UIKit
 import FirebaseDatabase
 
-class HomeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class HomeViewController: UIViewController {
 
     @IBOutlet var lblWelcome: UILabel!
+    @IBOutlet weak var searchButton: UIButton!
+    @IBOutlet weak var groupsContainer: UIView!
+    @IBOutlet weak var searchInput: UITextField!
     
+    var groupsController: GroupsTableViewController? = nil
     var ref:DatabaseReference?
     var uid = ""
     var name = ""
     var user = User.init()
     var groups: [Group] = []
-    
+
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        self.modalPresentationStyle = .fullScreen
+
+        let preferences = UserDefaults.standard
+        let uidkey = "uid"
+        if preferences.object(forKey: uidkey) == nil {
+            //  Doesn't exist
+        } else {
+            let uid = preferences.string(forKey: uidkey)
+            self.getUserUserById(uid: uid!)
+        }
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let groups = segue.destination as? GroupsTableViewController {
+            self.groupsController = groups
+        }
+    }
+
     @IBOutlet weak var groupsCollectionView: UICollectionView!
     func getUserUserById(uid: String) {
         //  Setup firebase database
@@ -39,40 +63,15 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let preferences = UserDefaults.standard
-        let uidkey = "uid"
-        if preferences.object(forKey: uidkey) == nil {
-            //  Doesn't exist
-        } else {
-            let uid = preferences.string(forKey: uidkey)
-            getUserUserById(uid: uid!)
-        }
-        ref = Database.database().reference()
-        self.ref?.child("groups").observe(.value) { (snapshot) in
-            for child in snapshot.children {
-                let snap = child as! DataSnapshot
-                let groupDict = snap.value as! [String: Any]
-                let groupElement: Group = Group.init(guid: groupDict["guid"] as! String, uid: groupDict["owner"] as! String,
-                                                     name: groupDict["name"] as! String, level: groupDict["level"] as! String,
-                                                     city: groupDict["city"] as! String, topic: groupDict["topic"] as! String)//, members: groupDict[""])
-                self.groups.append(groupElement)
-                print(self.groups[0].uid)
-            }
-        }
-        groupsCollectionView.register(CollectionViewCell.self, forCellWithReuseIdentifier: "homeGroupCell")
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tap))
+        searchButton.addGestureRecognizer(tapGesture)
     }
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.groups.count
-    }
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "homeGroupCell", for: indexPath) as! CollectionViewCell
-        
-        cell.lblName.text = self.groups[indexPath.row].name
-        cell.lblTopic.text = self.groups[indexPath.row].topic
-        cell.lblLevel.text = self.groups[indexPath.row].level
-        cell.lblCity.text = self.groups[indexPath.row].city
-        
-        return cell
+
+    @objc func tap() {
+        guard let input = searchInput.text else {
+            return
+        }
+
+        groupsController?.filter(by: input)
     }
 }

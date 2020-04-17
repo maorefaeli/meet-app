@@ -15,7 +15,7 @@ class Group {
     var level: String = ""
     var city: String = ""
     var topic: String = ""
-    //var members: [String] = []
+//    var members: [String] = []
     
     // Default Constructor (No parameter)
     init()  {

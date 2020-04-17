@@ -13,5 +13,15 @@ class CollectionViewCell: UICollectionViewCell {
     @IBOutlet var lblTopic: UILabel!
     @IBOutlet var lblLevel: UILabel!
     @IBOutlet var lblCity: UILabel!
-    
+
+    public var group: Group? {
+        didSet {
+            if let group = group {
+                self.lblName.text = group.name
+                self.lblTopic.text = group.topic
+                self.lblLevel.text = group.level
+                self.lblCity.text = group.city
+            }
+        }
+    }
 }

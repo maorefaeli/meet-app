@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		20F5BDB32442058E000DE319 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 20F5BDB22442058E000DE319 /* GoogleService-Info.plist */; };
 		210E5613CB702B876BB4A78C /* Pods_meetappUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77BE431C4B3E8BAA20E894CE /* Pods_meetappUITests.framework */; };
 		6079509F6BE1587FBC51F32A /* Pods_meetappTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DA914B0F9BCC840A810DBFE /* Pods_meetappTests.framework */; };
+		840832AF0340CCA877FE6B50 /* GroupsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840832E88E04B7DC38322EC4 /* GroupsTableViewController.swift */; };
+		84083C6285F5C41D42E71ACD /* GroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8408315BD4097FCFD6D95E4F /* GroupCell.swift */; };
 		845CE8EE2441DAE0006C5C08 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845CE8ED2441DAE0006C5C08 /* CollectionViewCell.swift */; };
 		84BB25BB241980D700ED6A60 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BB25BA241980D700ED6A60 /* HomeViewController.swift */; };
 		84BB25BD2419841700ED6A60 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BB25BC2419841700ED6A60 /* ProfileViewController.swift */; };
@@ -23,7 +26,6 @@
 		84F9B676241926AC0007FFB6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84F9B674241926AC0007FFB6 /* LaunchScreen.storyboard */; };
 		84F9B681241926AD0007FFB6 /* meetappTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F9B680241926AD0007FFB6 /* meetappTests.swift */; };
 		84F9B68C241926AD0007FFB6 /* meetappUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F9B68B241926AD0007FFB6 /* meetappUITests.swift */; };
-		84F9B69A24192C820007FFB6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84F9B69924192C820007FFB6 /* GoogleService-Info.plist */; };
 		AB121CA647D5027A5A5A6478 /* Pods_meetapp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92CCCD54270BB877A373F971 /* Pods_meetapp.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,8 +47,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		20F5BDB22442058E000DE319 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		561AF8FB11EF4C46AFA07831 /* Pods-meetappUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-meetappUITests.debug.xcconfig"; path = "Target Support Files/Pods-meetappUITests/Pods-meetappUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		77BE431C4B3E8BAA20E894CE /* Pods_meetappUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_meetappUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8408315BD4097FCFD6D95E4F /* GroupCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupCell.swift; sourceTree = "<group>"; };
+		840832E88E04B7DC38322EC4 /* GroupsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupsTableViewController.swift; sourceTree = "<group>"; };
 		845CE8ED2441DAE0006C5C08 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		84BB25BA241980D700ED6A60 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		84BB25BC2419841700ED6A60 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -60,14 +65,12 @@
 		84F9B670241926A90007FFB6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		84F9B672241926AC0007FFB6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84F9B675241926AC0007FFB6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		84F9B677241926AC0007FFB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84F9B67C241926AD0007FFB6 /* meetappTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = meetappTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		84F9B680241926AD0007FFB6 /* meetappTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = meetappTests.swift; sourceTree = "<group>"; };
 		84F9B682241926AD0007FFB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84F9B687241926AD0007FFB6 /* meetappUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = meetappUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		84F9B68B241926AD0007FFB6 /* meetappUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = meetappUITests.swift; sourceTree = "<group>"; };
 		84F9B68D241926AD0007FFB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		84F9B69924192C820007FFB6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8DA914B0F9BCC840A810DBFE /* Pods_meetappTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_meetappTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		904569036A272499107123E6 /* Pods-meetapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-meetapp.debug.xcconfig"; path = "Target Support Files/Pods-meetapp/Pods-meetapp.debug.xcconfig"; sourceTree = "<group>"; };
 		92CCCD54270BB877A373F971 /* Pods_meetapp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_meetapp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -140,7 +143,7 @@
 		84F9B668241926A90007FFB6 /* meetapp */ = {
 			isa = PBXGroup;
 			children = (
-				84F9B69924192C820007FFB6 /* GoogleService-Info.plist */,
+				20F5BDB22442058E000DE319 /* GoogleService-Info.plist */,
 				84F9B669241926A90007FFB6 /* AppDelegate.swift */,
 				84F9B66B241926A90007FFB6 /* SceneDelegate.swift */,
 				84F9B66D241926A90007FFB6 /* ViewController.swift */,
@@ -148,12 +151,13 @@
 				845CE8ED2441DAE0006C5C08 /* CollectionViewCell.swift */,
 				84F9B672241926AC0007FFB6 /* Assets.xcassets */,
 				84F9B674241926AC0007FFB6 /* LaunchScreen.storyboard */,
-				84F9B677241926AC0007FFB6 /* Info.plist */,
 				84BB25BA241980D700ED6A60 /* HomeViewController.swift */,
 				84BB25BC2419841700ED6A60 /* ProfileViewController.swift */,
 				84ECFC362438F7E9005A3DFF /* User.swift */,
 				84ECFC382439084E005A3DFF /* Group.swift */,
 				84ECFC3A24390975005A3DFF /* GroupViewController.swift */,
+				8408315BD4097FCFD6D95E4F /* GroupCell.swift */,
+				840832E88E04B7DC38322EC4 /* GroupsTableViewController.swift */,
 			);
 			path = meetapp;
 			sourceTree = "<group>";
@@ -299,7 +303,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84F9B676241926AC0007FFB6 /* LaunchScreen.storyboard in Resources */,
-				84F9B69A24192C820007FFB6 /* GoogleService-Info.plist in Resources */,
+				20F5BDB32442058E000DE319 /* GoogleService-Info.plist in Resources */,
 				84F9B673241926AC0007FFB6 /* Assets.xcassets in Resources */,
 				84F9B671241926A90007FFB6 /* Main.storyboard in Resources */,
 			);
@@ -438,6 +442,8 @@
 				84BB25BD2419841700ED6A60 /* ProfileViewController.swift in Sources */,
 				84F9B66C241926A90007FFB6 /* SceneDelegate.swift in Sources */,
 				84BB25BB241980D700ED6A60 /* HomeViewController.swift in Sources */,
+				84083C6285F5C41D42E71ACD /* GroupCell.swift in Sources */,
+				840832AF0340CCA877FE6B50 /* GroupsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
