@@ -13,6 +13,7 @@ import FirebaseStorage
 
 class ProfileViewController: UIViewController {
 
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet var tbName: UITextField!
     @IBOutlet weak var userImage: UIImageView!
     var ref:DatabaseReference?
@@ -35,6 +36,8 @@ class ProfileViewController: UIViewController {
                 }
             }
         }
+        spinner.stopAnimating()
+        spinner.hidesWhenStopped = true
     }
     
     func getImage(url:String, callback:@escaping (UIImage?)->Void) {
@@ -55,7 +58,9 @@ class ProfileViewController: UIViewController {
     }
     @IBAction func updateProfile(_ sender: Any) {
         let user: User = User(uid: Auth.auth().currentUser!.uid, name: tbName.text!, imageURL: self.imageURL)
+        spinner.startAnimating()
         DB.shared.users.update(user)
+        spinner.stopAnimating()
         performSegue(withIdentifier: "profileToHome", sender: Any?.self)
     }
     @IBAction func showMyGroups(_ sender: Any) {
@@ -63,6 +68,7 @@ class ProfileViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        spinner.startAnimating()
         getUserProfile(uid: Auth.auth().currentUser!.uid)
         // Do any additional setup after loading the view.
     }

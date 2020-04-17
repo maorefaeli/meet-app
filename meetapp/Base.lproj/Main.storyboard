@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -409,6 +409,11 @@
                                     <action selector="removeProfileImage:" destination="hGO-LU-XjN" eventType="touchUpInside" id="C5g-MA-NkS"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="hN2-ne-TVg">
+                                <rect key="frame" x="198" y="409" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="color" cocoaTouchSystemColor="darkTextColor"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="VpN-Fp-Tgg"/>
@@ -416,6 +421,7 @@
                     <tabBarItem key="tabBarItem" title="" image="person" catalog="system" id="LfK-3L-X6d"/>
                     <navigationItem key="navigationItem" id="fth-d5-Gub"/>
                     <connections>
+                        <outlet property="spinner" destination="hN2-ne-TVg" id="N3M-uQ-XLE"/>
                         <outlet property="tbName" destination="TUL-GY-Ejw" id="iq0-jH-Twb"/>
                         <outlet property="userImage" destination="oQA-vi-7VH" id="I5C-39-bPx"/>
                         <segue destination="iRk-0Q-HC2" kind="show" identifier="profileToMygroups" id="Jcg-TX-ldF"/>
