@@ -32,6 +32,7 @@ class ViewController: UIViewController {
         preferences.set(uid, forKey: uidkey)
         //  Save to disk
         let didSave = preferences.synchronize()
+        print("Saved:", didSave)
         performSegue(withIdentifier: "goHome", sender: Any?.self)
     }
     @IBAction func loginAction(_ sender: Any) {

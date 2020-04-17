@@ -25,8 +25,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		561AF8FB11EF4C46AFA07831 /* Pods-meetappUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-meetappUITests.debug.xcconfig"; path = "Target Support Files/Pods-meetappUITests/Pods-meetappUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		77BE431C4B3E8BAA20E894CE /* Pods_meetappUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_meetappUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		845CE8ED2441DAE0006C5C08 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		84BB25BA241980D700ED6A60 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		84BB25BC2419841700ED6A60 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -41,13 +39,9 @@
 		84F9B672241926AC0007FFB6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84F9B675241926AC0007FFB6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84F9B677241926AC0007FFB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8DA914B0F9BCC840A810DBFE /* Pods_meetappTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_meetappTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		904569036A272499107123E6 /* Pods-meetapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-meetapp.debug.xcconfig"; path = "Target Support Files/Pods-meetapp/Pods-meetapp.debug.xcconfig"; sourceTree = "<group>"; };
 		92CCCD54270BB877A373F971 /* Pods_meetapp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_meetapp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9BD8C3EB3150DCB72BCBD548 /* Pods-meetappUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-meetappUITests.release.xcconfig"; path = "Target Support Files/Pods-meetappUITests/Pods-meetappUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A433CFDC79275C52290181F4 /* Pods-meetapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-meetapp.release.xcconfig"; path = "Target Support Files/Pods-meetapp/Pods-meetapp.release.xcconfig"; sourceTree = "<group>"; };
-		AD31209DD3058B265F72CA4A /* Pods-meetappTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-meetappTests.debug.xcconfig"; path = "Target Support Files/Pods-meetappTests/Pods-meetappTests.debug.xcconfig"; sourceTree = "<group>"; };
-		D9C61AF742706995002D2727 /* Pods-meetappTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-meetappTests.release.xcconfig"; path = "Target Support Files/Pods-meetappTests/Pods-meetappTests.release.xcconfig"; sourceTree = "<group>"; };
 		EEA28DCC24420CA700E2231E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EEA28DD224488BD600E2231E /* DB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DB.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -68,8 +62,6 @@
 			isa = PBXGroup;
 			children = (
 				92CCCD54270BB877A373F971 /* Pods_meetapp.framework */,
-				8DA914B0F9BCC840A810DBFE /* Pods_meetappTests.framework */,
-				77BE431C4B3E8BAA20E894CE /* Pods_meetappUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -118,10 +110,6 @@
 			children = (
 				904569036A272499107123E6 /* Pods-meetapp.debug.xcconfig */,
 				A433CFDC79275C52290181F4 /* Pods-meetapp.release.xcconfig */,
-				AD31209DD3058B265F72CA4A /* Pods-meetappTests.debug.xcconfig */,
-				D9C61AF742706995002D2727 /* Pods-meetappTests.release.xcconfig */,
-				561AF8FB11EF4C46AFA07831 /* Pods-meetappUITests.debug.xcconfig */,
-				9BD8C3EB3150DCB72BCBD548 /* Pods-meetappUITests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
