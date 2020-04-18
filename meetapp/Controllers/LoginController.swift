@@ -15,27 +15,15 @@ class LoginController: UIViewController {
     @IBOutlet weak var teEmail: UITextField!
     @IBOutlet weak var tePassword: UITextField!
     
-
     //@IBOutlet var tbEmail: UITextField!
     //@IBOutlet var tbPassword: UITextField!
     @IBOutlet weak var tbStatus: UILabel!
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-    }
-    
-    func saveUidToPreferences() {
-        let preferences = UserDefaults.standard
-        let uidkey = "uid"
-        let uid = Auth.auth().currentUser!.uid
-        preferences.set(uid, forKey: uidkey)
-        //  Save to disk
-        let didSave = preferences.synchronize()
-        print("Saved:", didSave)
+        
+    func saveUserAndGoHome() {
+        Configuration.saveUserId(Auth.auth().currentUser!.uid)
         performSegue(withIdentifier: "goHome", sender: Any?.self)
     }
+    
     @IBAction func loginAction(_ sender: Any) {
         let email = teEmail.text!
         let password = tePassword.text!
@@ -47,9 +35,10 @@ class LoginController: UIViewController {
                 return
             }
             strongSelf.tbStatus.text = "Succesful login for email \(email)!"
-            strongSelf.saveUidToPreferences()
+            strongSelf.saveUserAndGoHome()
         }
     }
+    
     @IBAction func registerAction(_ sender: Any) {
         let email = teEmail.text!
         let password = tePassword.text!
@@ -60,7 +49,7 @@ class LoginController: UIViewController {
                 return
             }
             self.tbStatus.text = "User created!"
-            self.saveUidToPreferences()
+            self.saveUserAndGoHome()
         }
     }
 }

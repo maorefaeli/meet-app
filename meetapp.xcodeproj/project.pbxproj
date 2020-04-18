@@ -23,6 +23,7 @@
 		AB121CA647D5027A5A5A6478 /* Pods_meetapp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92CCCD54270BB877A373F971 /* Pods_meetapp.framework */; };
 		EE89A9E0244AF6F000BAF01B /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE89A9DF244AF6F000BAF01B /* Errors.swift */; };
 		EE89A9E2244B0D0600BAF01B /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE89A9E1244B0D0600BAF01B /* Helper.swift */; };
+		EE89A9E4244B1DCE00BAF01B /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE89A9E3244B1DCE00BAF01B /* Configuration.swift */; };
 		EEA28DCD24420CA700E2231E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EEA28DCC24420CA700E2231E /* GoogleService-Info.plist */; };
 		EEA28DD324488BD600E2231E /* DB.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA28DD224488BD600E2231E /* DB.swift */; };
 /* End PBXBuildFile section */
@@ -48,6 +49,7 @@
 		A433CFDC79275C52290181F4 /* Pods-meetapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-meetapp.release.xcconfig"; path = "Target Support Files/Pods-meetapp/Pods-meetapp.release.xcconfig"; sourceTree = "<group>"; };
 		EE89A9DF244AF6F000BAF01B /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		EE89A9E1244B0D0600BAF01B /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		EE89A9E3244B1DCE00BAF01B /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		EEA28DCC24420CA700E2231E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EEA28DD224488BD600E2231E /* DB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DB.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -134,6 +136,7 @@
 				EEA28DD224488BD600E2231E /* DB.swift */,
 				EE89A9DF244AF6F000BAF01B /* Errors.swift */,
 				EE89A9E1244B0D0600BAF01B /* Helper.swift */,
+				EE89A9E3244B1DCE00BAF01B /* Configuration.swift */,
 			);
 			path = SupportFiles;
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 			files = (
 				84ECFC3B24390975005A3DFF /* GroupViewController.swift in Sources */,
 				84ECFC392439084E005A3DFF /* Group.swift in Sources */,
+				EE89A9E4244B1DCE00BAF01B /* Configuration.swift in Sources */,
 				EEA28DD324488BD600E2231E /* DB.swift in Sources */,
 				84F9B66E241926A90007FFB6 /* LoginController.swift in Sources */,
 				84ECFC372438F7E9005A3DFF /* User.swift in Sources */,

@@ -30,7 +30,6 @@ class HomeViewController: UIViewController {
         }
     }
     
-    @IBOutlet weak var groupsCollectionView: UICollectionView!
     func getUserById(uid: String) {
         DB.shared.users.get(
             uid,
@@ -47,12 +46,8 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let preferences = UserDefaults.standard
-        let uidkey = "uid"
-        if preferences.object(forKey: uidkey) == nil {
-            //  Doesn't exist
-        } else {
-            let uid = preferences.string(forKey: uidkey)
+        let uid = Configuration.getUserId()
+        if uid != nil {
             self.getUserById(uid: uid!)
         }
         
