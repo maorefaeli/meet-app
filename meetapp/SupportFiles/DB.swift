@@ -44,10 +44,12 @@ class DB {
         }
 
         func update(_ user: User, onComplete: ((Error?) -> Void)?) {
-            //collection.child(user.uid).setValue(["name": user.name, "userPhoto": user.imageURL]) { (error:Error?, ref: DatabaseReference) in
-            collection.child(user.uid).updateChildValues(["name": user.name, "userPhoto": user.imageURL]) { (error:Error?, ref: DatabaseReference) in
-                onComplete?(error)
-            }
+            collection.child(user.uid).setValue(
+                ["name": user.name, "userPhoto": user.imageURL],
+                withCompletionBlock: { (error:Error?, ref: DatabaseReference) in
+                    onComplete?(error)
+                }
+            )
         }
     }
     
@@ -91,15 +93,18 @@ class DB {
         // group.members.append(member) // to add
         // group.members = group.members.filter{ $0 != member } // to remove
         func updateMembers(_ group: Group, onComplete: ((Error?) -> Void)?) {
-            collection.child(group.guid).setValue(["members": group.members]) { (error:Error?, ref: DatabaseReference) in
-                onComplete?(error)
-            }
+            collection.child(group.guid).setValue(
+                ["members": group.members],
+                withCompletionBlock: { (error:Error?, ref: DatabaseReference) in
+                    onComplete?(error)
+                }
+            )
         }
         
         func delete(guid: String, onComplete: ((Error?) -> Void)?) {
-            collection.child(guid).removeValue() { (error:Error?, ref: DatabaseReference) in
+            collection.child(guid).removeValue(completionBlock: { (error:Error?, ref: DatabaseReference) in
                 onComplete?(error)
-            }
+            })
         }
     }
         
