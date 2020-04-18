@@ -23,7 +23,7 @@ class GroupsTableViewController: UITableViewController {
                 let groupDict = snap.value as! [String: Any]
                 let groupElement: Group = Group.init(guid: groupDict["guid"] as! String, uid: groupDict["owner"] as! String,
                         name: groupDict["name"] as! String, level: groupDict["level"] as! String,
-                        city: groupDict["city"] as! String, topic: groupDict["topic"] as! String)//, members: groupDict[""])
+                        city: groupDict["city"] as! String, topic: groupDict["topic"] as! String, long: groupDict["long"] as! String, lat: groupDict["lat"] as! String)//, members: groupDict[""])
                 self.groups.append(groupElement)
                 print(self.groups[0].uid)
             }

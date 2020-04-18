@@ -65,7 +65,9 @@ class DB {
                 "name": group.name,
                 "level": group.level,
                 "city": group.city,
-                "topic": group.topic
+                "topic": group.topic,
+                "long": group.long,
+                "lat": group.lat
             ])
         }
     }
