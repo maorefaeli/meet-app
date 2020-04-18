@@ -15,15 +15,16 @@ class LoginController: UIViewController {
     
     @IBOutlet weak var teEmail: UITextField!
     @IBOutlet weak var tePassword: UITextField!
-    var userGroups: [Group] = []
-    
     //@IBOutlet var tbEmail: UITextField!
     //@IBOutlet var tbPassword: UITextField!
     @IBOutlet weak var tbStatus: UILabel!
+    
+    var userGroups: [Group] = []
+
     func getUserGroups(uid: String) {
         DB.shared.groups.observeAll(onSuccess: { (groups:[Group]) in
             for group in groups {
-                if group.owner == uid {
+                if group.members.contains(uid) {
                     self.userGroups.append(group)
                 }
             }
@@ -31,7 +32,9 @@ class LoginController: UIViewController {
     }
         
     func saveUserAndGoHome() {
-        Configuration.saveUserId(Auth.auth().currentUser!.uid)
+        let uid = Auth.auth().currentUser!.uid
+        Configuration.saveUserId(uid)
+        
         var db: OpaquePointer?
         var stmnt: OpaquePointer?
         let fileURL = try!
@@ -50,7 +53,7 @@ class LoginController: UIViewController {
         if sqlite3_prepare(db, insertQuery, -1, &stmnt, nil) != SQLITE_OK {
             Helper.showToast(controller: self, message: "Error loading local data", seconds: 5)
         }
-        self.getUserGroups(uid: Auth.auth().currentUser!.uid)
+        self.getUserGroups(uid: uid)
         for userGroup in userGroups {
             if sqlite3_bind_text(stmnt, 1, userGroup.guid, -1, nil) != SQLITE_OK {
                 Helper.showToast(controller: self, message: "Error loading local data", seconds: 5)
