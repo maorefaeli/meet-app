@@ -36,6 +36,9 @@ class ProfileViewController: UIViewController {
                         self.spinner.stopAnimating()
                         self.userImage.image = image
                     }
+                } else {
+                    self.spinner.stopAnimating()
+                    self.userImage.image = UIImage(named: "Logo")
                 }
             },
             onError: { (error:Error) in
