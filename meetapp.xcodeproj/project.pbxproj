@@ -60,6 +60,7 @@
 		EE89A9E3244B1DCE00BAF01B /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		EEA28DCC24420CA700E2231E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EEA28DD224488BD600E2231E /* DB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DB.swift; sourceTree = "<group>"; };
+		EEE076D4244B8E0F00A54A0B /* Location.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Location.gpx; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +116,7 @@
 				84F9B674241926AC0007FFB6 /* LaunchScreen.storyboard */,
 				EEA28DCC24420CA700E2231E /* GoogleService-Info.plist */,
 				84F9B677241926AC0007FFB6 /* Info.plist */,
+				EEE076D4244B8E0F00A54A0B /* Location.gpx */,
 			);
 			path = meetapp;
 			sourceTree = "<group>";
