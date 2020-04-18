@@ -20,8 +20,6 @@ class Group {
     var members: [String] = []
     
     // Default Constructor (No parameter)
-    var members: [String] = []
-
     init()  {
     }
 

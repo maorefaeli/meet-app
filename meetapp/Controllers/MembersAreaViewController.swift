@@ -17,14 +17,14 @@ class MembersAreaViewController :  UICollectionViewController {
         super.init(coder: decoder)
     }
 
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        members.count
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: "memberCell", for: indexPath) as! MemberCell
-        cell.member = members[indexPath.row]
-
-        return cell
-    }
+//    override func numberOfSections(in collectionView: UICollectionView) -> Int {
+//        members.count
+//    }
+//
+//    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//        let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: "memberCell", for: indexPath) as! MemberCell
+//        cell.member = members[indexPath.row]
+//
+//        return cell
+//    }
 }
