@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		209332B8244B17E90084BB48 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 209332B7244B17E90084BB48 /* MapKit.framework */; };
+		840837DB8D9753CE953B6BD1 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84083BCDD6E402D47A4CE32C /* MapViewController.swift */; };
 		84083C32A1AA608170563DB7 /* GroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84083311BBFB5922312C7A02 /* GroupCell.swift */; };
 		84083FB019E0EDEA9EB6A69A /* GroupTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840831B229F8191CD136AE24 /* GroupTableViewController.swift */; };
 		84BB25BB241980D700ED6A60 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BB25BA241980D700ED6A60 /* HomeViewController.swift */; };
@@ -29,8 +31,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		209332B7244B17E90084BB48 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		840831B229F8191CD136AE24 /* GroupTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupTableViewController.swift; sourceTree = "<group>"; };
 		84083311BBFB5922312C7A02 /* GroupCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupCell.swift; sourceTree = "<group>"; };
+		84083BCDD6E402D47A4CE32C /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		84BB25BA241980D700ED6A60 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		84BB25BC2419841700ED6A60 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		84ECFC362438F7E9005A3DFF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -59,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				209332B8244B17E90084BB48 /* MapKit.framework in Frameworks */,
 				AB121CA647D5027A5A5A6478 /* Pods_meetapp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -69,6 +74,7 @@
 		2312FDACDDC60BF54E679730 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				209332B7244B17E90084BB48 /* MapKit.framework */,
 				92CCCD54270BB877A373F971 /* Pods_meetapp.framework */,
 			);
 			name = Frameworks;
@@ -126,6 +132,7 @@
 				84BB25BC2419841700ED6A60 /* ProfileViewController.swift */,
 				84ECFC3A24390975005A3DFF /* GroupViewController.swift */,
 				840831B229F8191CD136AE24 /* GroupTableViewController.swift */,
+				84083BCDD6E402D47A4CE32C /* MapViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -299,6 +306,7 @@
 				EE89A9E2244B0D0600BAF01B /* Helper.swift in Sources */,
 				84083FB019E0EDEA9EB6A69A /* GroupTableViewController.swift in Sources */,
 				84083C32A1AA608170563DB7 /* GroupCell.swift in Sources */,
+				840837DB8D9753CE953B6BD1 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

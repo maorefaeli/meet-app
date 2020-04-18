@@ -13,8 +13,12 @@ class HomeViewController: UIViewController {
 
     @IBOutlet var lblWelcome: UILabel!
     @IBOutlet weak var searchButton: UIButton!
+    @IBOutlet weak var listButton: UIButton!
     @IBOutlet weak var groupsContainer: UIView!
     @IBOutlet weak var searchInput: UITextField!
+    @IBOutlet weak var mapButton: UIButton!
+    @IBOutlet weak var mapContainer: UIView!
+
 
     var groupsController: GroupsTableViewController? = nil
     var groups: [Group] = []
@@ -29,7 +33,7 @@ class HomeViewController: UIViewController {
             self.groupsController = groups
         }
     }
-    
+
     func getUserById(uid: String) {
         DB.shared.users.get(
             uid,
@@ -46,20 +50,44 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        mapContainer.isHidden = true
+        listButton.isHidden = true
         let uid = Configuration.getUserId()
         if uid != nil {
             self.getUserById(uid: uid!)
         }
         
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tap))
-        searchButton.addGestureRecognizer(tapGesture)
+        let searchTapGesture = UITapGestureRecognizer(target: self, action: #selector(tapSearch))
+        searchButton.addGestureRecognizer(searchTapGesture)
+
+        let mapTapGesture = UITapGestureRecognizer(target: self, action: #selector(tapMap))
+        mapButton.addGestureRecognizer(mapTapGesture)
+
+        let listTapGesture = UITapGestureRecognizer(target: self, action: #selector(tapList))
+        listButton.addGestureRecognizer(listTapGesture)
     }
 
-    @objc func tap() {
+    @objc func tapSearch() {
         guard let input = searchInput.text else {
             return
         }
 
         groupsController?.filter(by: input)
+    }
+
+    @objc func tapMap() {
+        groupsContainer.isHidden = true
+        mapButton.isHidden = true
+
+        mapContainer.isHidden = false
+        listButton.isHidden = false
+    }
+
+    @objc func tapList() {
+        mapContainer.isHidden = true
+        listButton.isHidden = true
+
+        groupsContainer.isHidden = false
+        mapButton.isHidden = false
     }
 }
