@@ -36,12 +36,12 @@ class ProfileViewController: UIViewController {
                         self.userImage.image = image
                     }
                 }
+                self.spinner.stopAnimating()
             },
             onError: { (error:Error) in
                 print(error.localizedDescription)
             }
         )
-        spinner.stopAnimating()
         spinner.hidesWhenStopped = true
     }
     
