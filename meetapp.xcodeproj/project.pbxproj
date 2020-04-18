@@ -87,20 +87,17 @@
 		84F9B668241926A90007FFB6 /* meetapp */ = {
 			isa = PBXGroup;
 			children = (
-				EEA28DD424488DBD00E2231E /* Entities */,
-				EEA28DD124488BC400E2231E /* Services */,
+				EE89A9DE244AF32A00BAF01B /* Controllers */,
+				EEA28DD424488DBD00E2231E /* Models */,
+				EEA28DD124488BC400E2231E /* SupportFiles */,
 				84F9B669241926A90007FFB6 /* AppDelegate.swift */,
 				84F9B66B241926A90007FFB6 /* SceneDelegate.swift */,
-				84F9B66D241926A90007FFB6 /* ViewController.swift */,
 				84F9B66F241926A90007FFB6 /* Main.storyboard */,
 				845CE8ED2441DAE0006C5C08 /* CollectionViewCell.swift */,
 				84F9B672241926AC0007FFB6 /* Assets.xcassets */,
 				84F9B674241926AC0007FFB6 /* LaunchScreen.storyboard */,
 				EEA28DCC24420CA700E2231E /* GoogleService-Info.plist */,
 				84F9B677241926AC0007FFB6 /* Info.plist */,
-				84BB25BA241980D700ED6A60 /* HomeViewController.swift */,
-				84BB25BC2419841700ED6A60 /* ProfileViewController.swift */,
-				84ECFC3A24390975005A3DFF /* GroupViewController.swift */,
 			);
 			path = meetapp;
 			sourceTree = "<group>";
@@ -114,21 +111,32 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		EEA28DD124488BC400E2231E /* Services */ = {
+		EE89A9DE244AF32A00BAF01B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				84F9B66D241926A90007FFB6 /* ViewController.swift */,
+				84BB25BA241980D700ED6A60 /* HomeViewController.swift */,
+				84BB25BC2419841700ED6A60 /* ProfileViewController.swift */,
+				84ECFC3A24390975005A3DFF /* GroupViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		EEA28DD124488BC400E2231E /* SupportFiles */ = {
 			isa = PBXGroup;
 			children = (
 				EEA28DD224488BD600E2231E /* DB.swift */,
 			);
-			path = Services;
+			path = SupportFiles;
 			sourceTree = "<group>";
 		};
-		EEA28DD424488DBD00E2231E /* Entities */ = {
+		EEA28DD424488DBD00E2231E /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				84ECFC362438F7E9005A3DFF /* User.swift */,
 				84ECFC382439084E005A3DFF /* Group.swift */,
 			);
-			path = Entities;
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
