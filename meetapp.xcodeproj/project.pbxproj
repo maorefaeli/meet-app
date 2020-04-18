@@ -9,7 +9,9 @@
 /* Begin PBXBuildFile section */
 		209332B8244B17E90084BB48 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 209332B7244B17E90084BB48 /* MapKit.framework */; };
 		840837DB8D9753CE953B6BD1 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84083BCDD6E402D47A4CE32C /* MapViewController.swift */; };
+		8408389F015DB8E56945F6A2 /* MemberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84083E79A2967EB527307162 /* MemberCell.swift */; };
 		84083C32A1AA608170563DB7 /* GroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84083311BBFB5922312C7A02 /* GroupCell.swift */; };
+		84083E9BE646A27216074D64 /* MembersAreaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84083A86A52F479D82B614DC /* MembersAreaViewController.swift */; };
 		84083FB019E0EDEA9EB6A69A /* GroupTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840831B229F8191CD136AE24 /* GroupTableViewController.swift */; };
 		84BB25BB241980D700ED6A60 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BB25BA241980D700ED6A60 /* HomeViewController.swift */; };
 		84BB25BD2419841700ED6A60 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BB25BC2419841700ED6A60 /* ProfileViewController.swift */; };
@@ -34,7 +36,9 @@
 		209332B7244B17E90084BB48 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		840831B229F8191CD136AE24 /* GroupTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupTableViewController.swift; sourceTree = "<group>"; };
 		84083311BBFB5922312C7A02 /* GroupCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupCell.swift; sourceTree = "<group>"; };
+		84083A86A52F479D82B614DC /* MembersAreaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MembersAreaViewController.swift; sourceTree = "<group>"; };
 		84083BCDD6E402D47A4CE32C /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		84083E79A2967EB527307162 /* MemberCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberCell.swift; sourceTree = "<group>"; };
 		84BB25BA241980D700ED6A60 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		84BB25BC2419841700ED6A60 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		84ECFC362438F7E9005A3DFF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -133,6 +137,7 @@
 				84ECFC3A24390975005A3DFF /* GroupViewController.swift */,
 				840831B229F8191CD136AE24 /* GroupTableViewController.swift */,
 				84083BCDD6E402D47A4CE32C /* MapViewController.swift */,
+				84083A86A52F479D82B614DC /* MembersAreaViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -154,6 +159,7 @@
 				84ECFC362438F7E9005A3DFF /* User.swift */,
 				84ECFC382439084E005A3DFF /* Group.swift */,
 				84083311BBFB5922312C7A02 /* GroupCell.swift */,
+				84083E79A2967EB527307162 /* MemberCell.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -307,6 +313,8 @@
 				84083FB019E0EDEA9EB6A69A /* GroupTableViewController.swift in Sources */,
 				84083C32A1AA608170563DB7 /* GroupCell.swift in Sources */,
 				840837DB8D9753CE953B6BD1 /* MapViewController.swift in Sources */,
+				8408389F015DB8E56945F6A2 /* MemberCell.swift in Sources */,
+				84083E9BE646A27216074D64 /* MembersAreaViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

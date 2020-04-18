@@ -19,9 +19,12 @@ class Group {
     var lat: String = ""
     var members: [String] = []
     
+    // Default Constructor (No parameter)
+    var members: [String] = []
+
     init()  {
     }
-    
+
     init (guid: String = "", owner: String, name: String, level: String, city: String, topic: String, long: String, lat: String, members: [String]) {
         self.guid = guid
         self.owner = owner

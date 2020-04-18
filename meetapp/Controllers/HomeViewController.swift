@@ -28,19 +28,9 @@ class HomeViewController: UIViewController {
         self.modalPresentationStyle = .fullScreen
         DB.shared.groups.observeAll(onSuccess: { (groups:[Group]) in
             self.groups = groups
-            self.groupsController?.groups = groups
+            self.groupsController?.groups =  groups
             self.mapsController?.groups = groups
         })
-    }
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let groups = segue.destination as? GroupsTableViewController {
-            self.groupsController = groups
-        }
-        
-        if let map = segue.destination as? MapViewController {
-            self.mapsController = map
-        }
     }
 
     func getUserById(uid: String) {
@@ -58,6 +48,18 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        for child in children {
+            if let groups = child as? GroupsTableViewController {
+                self.groupsController = groups
+                self.groupsController?.groups = self.groups
+            }
+
+            if let map = child as? MapViewController {
+                self.mapsController = map
+                self.mapsController?.groups = groups
+            }
+        }
         
         mapContainer.isHidden = true
         listButton.isHidden = true
