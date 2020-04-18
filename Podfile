@@ -11,7 +11,8 @@ target 'meetapp' do
   pod 'Firebase/Auth'
   pod ‘Firebase/Database’
   pod 'Firebase/Storage'
-
+  pod 'Firebase/Firestore'
+  
   target 'meetappTests' do
     inherit! :search_paths
     # Pods for testing
