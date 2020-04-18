@@ -44,7 +44,8 @@ class DB {
         }
 
         func update(_ user: User, onComplete: ((Error?) -> Void)?) {
-            collection.child(user.uid).setValue(["name": user.name, "userPhoto": user.imageURL]) { (error:Error?, ref: DatabaseReference) in
+            //collection.child(user.uid).setValue(["name": user.name, "userPhoto": user.imageURL]) { (error:Error?, ref: DatabaseReference) in
+            collection.child(user.uid).updateChildValues(["name": user.name, "userPhoto": user.imageURL]) { (error:Error?, ref: DatabaseReference) in
                 onComplete?(error)
             }
         }
