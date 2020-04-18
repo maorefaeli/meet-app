@@ -25,14 +25,20 @@ class MapViewController: UIViewController {
 
         for group in groups {
             guard let lat = CLLocationDegrees(group.lat), let long = CLLocationDegrees(group.long) else {
-                return
+                continue
             }
-
+            
             let coordinate = CLLocationCoordinate2D(latitude: lat, longitude: long)
+            let annotation = MKPointAnnotation()
+            annotation.coordinate = coordinate
+            annotation.title = "\(group.name) (\(group.city))"
+            annotation.subtitle = "\(group.topic) - \(group.level)"
+            map.addAnnotation(annotation)
+            
+            // Display the are of the last point
             let pin = MKPlacemark(coordinate: coordinate)
-            let coordinateRegion = MKCoordinateRegion(center: pin.coordinate, latitudinalMeters: 800, longitudinalMeters: 800)
+            let coordinateRegion = MKCoordinateRegion(center: pin.coordinate, latitudinalMeters: 2000, longitudinalMeters: 2000)
             map.setRegion(coordinateRegion, animated: true)
-            map.addAnnotation(pin)
         }
     }
 }

@@ -49,24 +49,11 @@ class GroupViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     @IBAction func createGroup(_ sender: Any) {
-        var level: String
-        
-        switch scLevel.selectedSegmentIndex {
-        case 0:
-            level = "Begginer"
-        case 1:
-            level = "Intermidate"
-        case 2:
-            level = "Advanced"
-        default:
-            level = "Begginer"
-        }
-        
         let uid = Auth.auth().currentUser!.uid
         let group: Group = Group(
             owner: uid,
             name: tbGroupName.text!,
-            level: level,
+            level: Helper.getLevelAsString(scLevel.selectedSegmentIndex),
             city: tbGroupCity.text!,
             topic: tbTopic.text!,
             long: self.longCoor,

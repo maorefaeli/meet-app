@@ -9,6 +9,12 @@
 import UIKit
 
 class Helper{
+    private static let levels = [
+        0: "Beginner",
+        1: "Intermidate",
+        2: "Advanced"
+    ]
+    
     static func showToast(controller: UIViewController, message : String, seconds: Double) {
         let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
         alert.view.backgroundColor = UIColor.black
@@ -27,5 +33,13 @@ class Helper{
     
     static func subtractArrays(arr1:[String], arr2:[String]) -> [String] {
         return Array(Set(arr1).subtracting(Set(arr2)))
+    }
+    
+    static func getLevelAsString(_ level: Int) -> String {
+        if let result = levels[level] {
+            return result
+        } else {
+            return levels[0]!
+        }
     }
 }
