@@ -65,7 +65,9 @@ class DB {
                 "name": group.name,
                 "level": group.level,
                 "city": group.city,
-                "topic": group.topic
+                "topic": group.topic,
+                "long": group.long,
+                "lat": group.lat
             ])
         }
         
@@ -78,7 +80,7 @@ class DB {
                     let groupElement: Group = Group(
                         guid: groupDict["guid"] as! String, owner: groupDict["owner"] as! String,
                         name: groupDict["name"] as! String, level: groupDict["level"] as! String,
-                        city: groupDict["city"] as! String, topic: groupDict["topic"] as! String)//, members: groupDict[""])
+                        city: groupDict["city"] as! String, topic: groupDict["topic"] as! String, long: groupDict["long"] as! String, lat: groupDict["lat"] as! String)//, members: groupDict[""])
                     groups.append(groupElement)
                     onSuccess(groups)
                 }
