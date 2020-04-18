@@ -27,10 +27,10 @@
             </objects>
             <point key="canvasLocation" x="-3907" y="-260"/>
         </scene>
-        <!--View Controller-->
+        <!--Login Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="meetapp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LoginController" customModule="meetapp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -53,12 +53,6 @@
                                     <action selector="loginAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8Eb-lh-Svj"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SPN-cb-Egd">
-                                <rect key="frame" x="124" y="258" width="253" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QMM-eB-Tsf">
                                 <rect key="frame" x="232" y="283" width="0.0" height="0.0"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -100,6 +94,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jvY-TP-s4X">
+                                <rect key="frame" x="124" y="258" width="253" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -109,15 +109,15 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="tbStatus" destination="TYy-jE-25v" id="R8g-bE-qSq"/>
-                        <outlet property="teEmail" destination="SPN-cb-Egd" id="A0z-MS-ctQ"/>
-                        <outlet property="tePassword" destination="xkE-87-fSJ" id="VvY-BK-Ddg"/>
+                        <outlet property="tbStatus" destination="TYy-jE-25v" id="X1O-fZ-DAz"/>
+                        <outlet property="teEmail" destination="jvY-TP-s4X" id="Eai-Ra-qXJ"/>
+                        <outlet property="tePassword" destination="xkE-87-fSJ" id="5uW-Fo-d8v"/>
                         <segue destination="meA-Dw-g1r" kind="show" identifier="goHome" id="DLY-z4-DBE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3907" y="-1078"/>
+            <point key="canvasLocation" x="-3907.2463768115945" y="-1078.125"/>
         </scene>
         <!--Groups Table View Controller-->
         <scene sceneID="C7N-Nj-UXT">
@@ -563,6 +563,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="bpL-IP-JQy"/>
-        <segue reference="Gw6-lL-Y8a"/>
+        <segue reference="DLY-z4-DBE"/>
     </inferredMetricsTieBreakers>
 </document>
