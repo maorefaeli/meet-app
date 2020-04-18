@@ -43,6 +43,10 @@ class DB {
             })
         }
 
+        func update(_ user: User) {
+            update(user, onComplete: nil)
+        }
+        
         func update(_ user: User, onComplete: ((Error?) -> Void)?) {
             collection.child(user.uid).setValue(
                 ["name": user.name, "userPhoto": user.imageURL],

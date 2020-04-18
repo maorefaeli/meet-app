@@ -22,32 +22,6 @@ class GroupViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet var tbTopic: UITextField!
     @IBOutlet var scLevel: UISegmentedControl!
     
-    var ref:DatabaseReference?
-    
-    func getGroupByName(groupname: String) -> Bool {
-        var res = false
-        //  Setup firebase database
-        ref = Database.database().reference()
-        ref?.child("groups").child(groupname).observeSingleEvent(of: .value, with: { (snapshot) in
-          // Get group value
-          let value = snapshot.value as? NSDictionary
-          if value == nil {
-            res = false
-          } else {
-            res = true
-            // create the alert
-            let alert = UIAlertController(title: "Cannot create a new group", message: "Group name already exist", preferredStyle: UIAlertController.Style.alert)
-            // add an action (button)
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-            // show the alert
-            self.present(alert, animated: true, completion: nil)
-            }
-          }) { (error) in
-            print(error.localizedDescription)
-        }
-        return res
-    }
-    
     @IBAction func createGroup(_ sender: Any) {
         let uid = Auth.auth().currentUser!.uid
         let group: Group = Group(
@@ -64,6 +38,7 @@ class GroupViewController: UIViewController, CLLocationManagerDelegate {
         DB.shared.groups.create(group)
         performSegue(withIdentifier: "createGroupToHome", sender: Any?.self)
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.locationManager.requestWhenInUseAuthorization()

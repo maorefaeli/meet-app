@@ -78,20 +78,20 @@ class HomeViewController: UIViewController {
         listButton.addGestureRecognizer(listTapGesture)
     }
 
-    @objc func tapSearch() {
-        guard let input = searchInput.text else {
-            return
+    @objc func tapSearch() {       
+        var filteredGroups: [Group] = []
+        
+        let userId = Configuration.getUserId() ?? ""
+        filteredGroups = groups.filter{ (group:Group) in
+            if group.members.contains(userId) {
+                return false
+            }
+            if let searchBy = searchInput.text {
+                return group.name.lowercased().contains(searchBy)
+            }
+            return true
         }
         
-        let filter = input.lowercased()
-
-        var filteredGroups: [Group] = []
-        if !filter.isEmpty {
-            filteredGroups = groups.filter{ $0.name.lowercased().contains(filter) }
-        } else {
-            filteredGroups = groups
-        }
-
         self.groupsController?.groups = filteredGroups
         self.mapsController?.groups = filteredGroups
     }

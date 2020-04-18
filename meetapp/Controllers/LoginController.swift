@@ -32,9 +32,10 @@ class LoginController: UIViewController {
        })
     }
         
-    func saveUserAndGoHome() {
+    func saveUserAndGoHome(name: String? = nil) {
         let uid = Auth.auth().currentUser!.uid
         Configuration.saveUserId(uid)
+        DB.shared.users.update(User(uid: uid, name: name ?? ""))
         
         var db: OpaquePointer?
         var stmnt: OpaquePointer?
@@ -95,7 +96,7 @@ class LoginController: UIViewController {
                 return
             }
             self.tbStatus.text = "User created!"
-            self.saveUserAndGoHome()
+            self.saveUserAndGoHome(name: email)
         }
     }
 }
