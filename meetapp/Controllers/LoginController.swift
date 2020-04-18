@@ -23,6 +23,7 @@ class LoginController: UIViewController {
 
     func getUserGroups(uid: String) {
         DB.shared.groups.observeAll(onSuccess: { (groups:[Group]) in
+            self.userGroups = []
             for group in groups {
                 if group.members.contains(uid) {
                     self.userGroups.append(group)
