@@ -33,16 +33,16 @@ class ProfileViewController: UIViewController {
                 self.imageURL = user.imageURL
                 if self.imageURL != "" {
                     self.getImage(url: self.imageURL) { (image) in
+                        self.spinner.stopAnimating()
                         self.userImage.image = image
                     }
                 }
-                self.spinner.stopAnimating()
             },
             onError: { (error:Error) in
+                self.spinner.stopAnimating()
                 print(error.localizedDescription)
             }
         )
-        spinner.hidesWhenStopped = true
     }
     
     func getImage(url:String, callback:@escaping (UIImage?)->Void) {
@@ -73,6 +73,7 @@ class ProfileViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        spinner.hidesWhenStopped = true
         spinner.startAnimating()
         getUserProfile(uid: Auth.auth().currentUser!.uid)
         // Do any additional setup after loading the view.

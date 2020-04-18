@@ -500,7 +500,7 @@
                                 </connections>
                             </button>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="hN2-ne-TVg">
-                                <rect key="frame" x="198" y="409" width="20" height="20"/>
+                                <rect key="frame" x="156" y="190" width="102" height="212"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="color" cocoaTouchSystemColor="darkTextColor"/>
                             </activityIndicatorView>
@@ -520,7 +520,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q6O-dD-47C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2994" y="467"/>
+            <point key="canvasLocation" x="-2994.202898550725" y="466.74107142857139"/>
         </scene>
         <!--Profile To Mygroups-->
         <scene sceneID="81Z-OP-iYb">
@@ -563,6 +563,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="bpL-IP-JQy"/>
-        <segue reference="DLY-z4-DBE"/>
+        <segue reference="Gw6-lL-Y8a"/>
     </inferredMetricsTieBreakers>
 </document>
