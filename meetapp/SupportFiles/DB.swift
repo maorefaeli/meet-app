@@ -31,12 +31,15 @@ class DB {
         func get(_ uid: String, onSuccess: @escaping (User) -> Void, onError: ((Error) -> Void)?) {
             collection.child(uid).observeSingleEvent(of: .value, with: { (snapshot) in
                 if let value = snapshot.value as? NSDictionary {
-                    onSuccess(User(uid: uid,
-                                   name: value["name"] as? String ?? "",
-                                   imageURL: value["userPhoto"] as? String ?? ""))
+                    let user = User(uid: uid,
+                                    name: value["name"] as? String ?? "",
+                                    imageURL: value["userPhoto"] as? String ?? "")
+                    onSuccess(user)
                 } else {
                     onError?(CustomError.general(desc: "User data is corrupted"))
                 }
+            }, withCancel: { (error:Error) in
+                onError?(error)
             })
         }
         
