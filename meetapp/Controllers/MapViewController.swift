@@ -9,8 +9,15 @@ import MapKit
 
 class MapViewController: UIViewController {
     @IBOutlet var map: MKMapView!
+
+    var groups: [Group] = [] {
+        didSet {
+            // reload data
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+
 }

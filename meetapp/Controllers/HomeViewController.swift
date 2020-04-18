@@ -19,18 +19,27 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var mapButton: UIButton!
     @IBOutlet weak var mapContainer: UIView!
 
-
-    var groupsController: GroupsTableViewController? = nil
     var groups: [Group] = []
-
+    var groupsController: GroupsTableViewController? = nil
+    var mapsController: MapViewController? = nil
+    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         self.modalPresentationStyle = .fullScreen
+        DB.shared.groups.observeAll(onSuccess: { (groups:[Group]) in
+            self.groups = groups
+            self.groupsController?.groups = groups
+            self.mapsController?.groups = groups
+        })
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let groups = segue.destination as? GroupsTableViewController {
             self.groupsController = groups
+        }
+        
+        if let map = segue.destination as? MapViewController {
+            self.mapsController = map
         }
     }
 
@@ -71,8 +80,18 @@ class HomeViewController: UIViewController {
         guard let input = searchInput.text else {
             return
         }
+        
+        let filter = input.lowercased()
 
-        groupsController?.filter(by: input)
+        var filteredGroups: [Group] = []
+        if !filter.isEmpty {
+            filteredGroups = groups.filter{ $0.name.lowercased().contains(filter) }
+        } else {
+            filteredGroups = groups
+        }
+
+        self.groupsController?.groups = filteredGroups
+        self.mapsController?.groups = filteredGroups
     }
 
     @objc func tapMap() {

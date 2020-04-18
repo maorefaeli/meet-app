@@ -10,16 +10,15 @@ import FirebaseDatabase
 class GroupsTableViewController: UITableViewController {
     let cellHeight: CGFloat = 200
     var ref:DatabaseReference?
-    var groups: [Group] = []
+    var groups: [Group] = [] {
+        didSet {
+            self.tableView.reloadData()
+        }
+    }
     var filteredGroups: [Group] = []
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-
-        DB.shared.groups.observeAll(onSuccess: { (groups:[Group]) in
-            self.groups = groups
-            self.filter(by: "")
-        })
     }
     
     // Called from HomeViewController
