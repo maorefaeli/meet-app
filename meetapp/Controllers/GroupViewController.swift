@@ -91,8 +91,6 @@ class GroupViewController: UIViewController, CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let userLocation = locations.last
-        print("location")
-        
         self.longCoor = "\(userLocation!.coordinate.longitude)"
         self.latCoor = "\(userLocation!.coordinate.latitude)"
     }
