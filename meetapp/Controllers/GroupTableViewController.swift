@@ -16,23 +16,13 @@ class GroupsTableViewController: UITableViewController {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
 
-        ref = Database.database().reference()
-        self.ref?.child("groups").observe(.value) { (snapshot) in
-            for child in snapshot.children {
-                let snap = child as! DataSnapshot
-                let groupDict = snap.value as! [String: Any]
-                let groupElement: Group = Group.init(guid: groupDict["guid"] as! String, uid: groupDict["owner"] as! String,
-                        name: groupDict["name"] as! String, level: groupDict["level"] as! String,
-                        city: groupDict["city"] as! String, topic: groupDict["topic"] as! String)//, members: groupDict[""])
-                self.groups.append(groupElement)
-                print(self.groups[0].uid)
-            }
-
-            self.filteredGroups = self.groups
-            self.tableView.reloadData()
-        }
+        DB.shared.groups.observeAll(onSuccess: { (groups:[Group]) in
+            self.groups = groups
+            self.filter(by: "")
+        })
     }
-
+    
+    // Called from HomeViewController
     func filter(by: String) {
         let filter = by.lowercased()
 
@@ -42,7 +32,7 @@ class GroupsTableViewController: UITableViewController {
             filteredGroups = groups
         }
 
-        self.tableView.reloadData()
+        self.tableView?.reloadData()
     }
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

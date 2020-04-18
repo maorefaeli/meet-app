@@ -61,12 +61,28 @@ class DB {
         func create(_ group: Group) {
             collection.child(group.guid).setValue([
                 "guid": group.guid,
-                "owner": group.uid,
+                "owner": group.owner,
                 "name": group.name,
                 "level": group.level,
                 "city": group.city,
                 "topic": group.topic
             ])
+        }
+        
+        func observeAll(onSuccess: @escaping ([Group]) -> Void) {
+            collection.observe(.value) { (snapshot) in
+                var groups:[Group] = []
+                for child in snapshot.children {
+                    let snap = child as! DataSnapshot
+                    let groupDict = snap.value as! [String: Any]
+                    let groupElement: Group = Group(
+                        guid: groupDict["guid"] as! String, owner: groupDict["owner"] as! String,
+                        name: groupDict["name"] as! String, level: groupDict["level"] as! String,
+                        city: groupDict["city"] as! String, topic: groupDict["topic"] as! String)//, members: groupDict[""])
+                    groups.append(groupElement)
+                    onSuccess(groups)
+                }
+            }
         }
     }
         

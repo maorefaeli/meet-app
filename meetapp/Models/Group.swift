@@ -10,7 +10,7 @@ import Foundation
 
 class Group {
     var guid: String = ""
-    var uid: String = ""
+    var owner: String = ""
     var name: String = ""
     var level: String = ""
     var city: String = ""
@@ -22,9 +22,9 @@ class Group {
          
     }
     
-    init (guid: String = "", uid: String, name: String, level: String, city: String, topic: String/*, members: [String]*/)  {
+    init (guid: String = "", owner: String, name: String, level: String, city: String, topic: String/*, members: [String]*/)  {
         self.guid = guid
-        self.uid = uid
+        self.owner = owner
         self.name = name
         self.city = city
         self.level = level

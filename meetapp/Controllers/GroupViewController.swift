@@ -57,7 +57,7 @@ class GroupViewController: UIViewController {
         }
         
         let group: Group = Group(
-            uid: Auth.auth().currentUser!.uid,
+            owner: Auth.auth().currentUser!.uid,
             name: tbGroupName.text!,
             level: level,
             city: tbGroupCity.text!,
