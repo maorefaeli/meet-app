@@ -64,9 +64,15 @@ class ProfileViewController: UIViewController {
     @IBAction func updateProfile(_ sender: Any) {
         let user: User = User(uid: Auth.auth().currentUser!.uid, name: tbName.text!, imageURL: self.imageURL)
         spinner.startAnimating()
-        DB.shared.users.update(user)
-        spinner.stopAnimating()
-        performSegue(withIdentifier: "profileToHome", sender: Any?.self)
+        DB.shared.users.update(user, onComplete: { (error:Error?) in
+            self.spinner.stopAnimating()
+            if error == nil {
+                self.performSegue(withIdentifier: "profileToHome", sender: Any?.self)
+            } else {
+                Helper.showToast(controller: self, message: "Error updating user details", seconds: 3)
+            }
+        })
+        
     }
     @IBAction func showMyGroups(_ sender: Any) {
         performSegue(withIdentifier: "profileToMygroups", sender: Any?.self)
