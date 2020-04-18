@@ -21,6 +21,10 @@ class ProfileViewController: UIViewController {
     var imageURL: String = ""
     var name: String = ""
     
+    func getDefaultImage() -> UIImage? {
+        return UIImage(named: "Logo")
+    }
+    
     func getUserProfile(uid: String) {
         DB.shared.users.get(
             uid,
@@ -38,7 +42,7 @@ class ProfileViewController: UIViewController {
                     }
                 } else {
                     self.spinner.stopAnimating()
-                    self.userImage.image = UIImage(named: "Logo")
+                    self.userImage.image = self.getDefaultImage()
                 }
             },
             onError: { (error:Error) in
@@ -62,8 +66,9 @@ class ProfileViewController: UIViewController {
     
     @IBAction func removeProfileImage(_ sender: Any) {
         self.imageURL = ""
-        self.userImage.image = nil
+        self.userImage.image = self.getDefaultImage()
     }
+    
     @IBAction func updateProfile(_ sender: Any) {
         let user: User = User(uid: Auth.auth().currentUser!.uid, name: tbName.text!, imageURL: self.imageURL)
         spinner.startAnimating()
@@ -75,11 +80,12 @@ class ProfileViewController: UIViewController {
                 Helper.showToast(controller: self, message: "Error updating user details", seconds: 3)
             }
         })
-        
     }
+    
     @IBAction func showMyGroups(_ sender: Any) {
         performSegue(withIdentifier: "profileToMygroups", sender: Any?.self)
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         spinner.hidesWhenStopped = true
