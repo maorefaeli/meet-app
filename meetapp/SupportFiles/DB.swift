@@ -51,6 +51,25 @@ class DB {
                 }
             )
         }
+        
+        func getUsersOfGroup(_ group:Group, onComplete: @escaping ([User]) -> Void) {
+            let dispatchGroup = DispatchGroup()
+            var users:[User] = []
+            
+            for uid in group.members {
+                dispatchGroup.enter()
+                get(uid, onSuccess: { (user:User) in
+                    users.append(user)
+                    dispatchGroup.leave()
+                }, onError: { (error) in
+                    dispatchGroup.leave()
+                })
+            }
+            
+            dispatchGroup.notify(queue: .main) {
+                onComplete(users)
+            }
+        }
     }
     
     class Groups: Collection {
