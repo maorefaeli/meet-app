@@ -44,12 +44,9 @@ class DB {
         }
 
         func update(_ user: User, onComplete: ((Error?) -> Void)?) {
-            collection.child(user.uid).setValue(
-                ["name": user.name, "userPhoto": user.imageURL],
-                withCompletionBlock: { (error:Error?, ref: DatabaseReference) in
-                    onComplete?(error)
-                }
-            )
+            collection.child(user.uid).setValue(["name": user.name, "userPhoto": user.imageURL]) { (error:Error?, ref: DatabaseReference) in
+                onComplete?(error)
+            }
         }
     }
     
@@ -67,7 +64,8 @@ class DB {
                 "city": group.city,
                 "topic": group.topic,
                 "long": group.long,
-                "lat": group.lat
+                "lat": group.lat,
+                "members": group.members
             ])
         }
         
@@ -80,10 +78,26 @@ class DB {
                     let groupElement: Group = Group(
                         guid: groupDict["guid"] as! String, owner: groupDict["owner"] as! String,
                         name: groupDict["name"] as! String, level: groupDict["level"] as! String,
-                        city: groupDict["city"] as! String, topic: groupDict["topic"] as! String, long: groupDict["long"] as! String, lat: groupDict["lat"] as! String)//, members: groupDict[""])
+                        city: groupDict["city"] as! String, topic: groupDict["topic"] as! String,
+                        long: groupDict["long"] as! String, lat: groupDict["lat"] as! String,
+                        members: groupDict["members"] as? [String] ?? [])
                     groups.append(groupElement)
                     onSuccess(groups)
                 }
+            }
+        }
+        
+        // group.members.append(member) // to add
+        // group.members = group.members.filter{ $0 != member } // to remove
+        func updateMembers(_ group: Group, member: String, onComplete: ((Error?) -> Void)?) {
+            collection.child(group.guid).setValue(["members": group.members]) { (error:Error?, ref: DatabaseReference) in
+                onComplete?(error)
+            }
+        }
+        
+        func delete(guid: String, onComplete: ((Error?) -> Void)?) {
+            collection.child(guid).removeValue() { (error:Error?, ref: DatabaseReference) in
+                onComplete?(error)
             }
         }
     }

@@ -62,15 +62,16 @@ class GroupViewController: UIViewController, CLLocationManagerDelegate {
             level = "Begginer"
         }
         
+        let uid = Auth.auth().currentUser!.uid
         let group: Group = Group(
-            owner: Auth.auth().currentUser!.uid,
+            owner: uid,
             name: tbGroupName.text!,
             level: level,
             city: tbGroupCity.text!,
             topic: tbTopic.text!,
             long: self.longCoor,
-            lat: self.latCoor
-            // members: [Auth.auth().currentUser!.uid]
+            lat: self.latCoor,
+            members: [uid]
         )
         group.generateGuid()
         DB.shared.groups.create(group)

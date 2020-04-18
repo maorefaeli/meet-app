@@ -17,15 +17,12 @@ class Group {
     var topic: String = ""
     var long: String = ""
     var lat: String = ""
+    var members: [String] = []
     
-    
-    //var members: [String] = []
-    
-    // Default Constructor (No parameter)
     init()  {
-         
     }
-    init (guid: String = "", owner: String, name: String, level: String, city: String, topic: String, long: String, lat: String /*, members: [String]*/)  {
+    
+    init (guid: String = "", owner: String, name: String, level: String, city: String, topic: String, long: String, lat: String, members: [String]) {
         self.guid = guid
         self.owner = owner
         self.name = name
@@ -34,7 +31,7 @@ class Group {
         self.topic = topic
         self.long = long
         self.lat = lat
-        //self.members = members
+        self.members = members
     }
  
     func generateGuid() {

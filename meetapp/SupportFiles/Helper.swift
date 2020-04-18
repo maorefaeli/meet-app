@@ -20,4 +20,12 @@ class Helper{
             alert.dismiss(animated: true)
         }
     }
+    
+    static func unionArrays(arr1:[String], arr2:[String]) -> [String] {
+        return Array(Set(arr1).union(Set(arr2)))
+    }
+    
+    static func subtractArrays(arr1:[String], arr2:[String]) -> [String] {
+        return Array(Set(arr1).subtracting(Set(arr2)))
+    }
 }

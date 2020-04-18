@@ -25,10 +25,16 @@ class GroupsTableViewController: UITableViewController {
     func filter(by: String) {
         let filter = by.lowercased()
 
-        if !by.isEmpty {
-            filteredGroups = groups.filter{ $0.name.lowercased().contains(filter) }
-        } else {
-            filteredGroups = groups
+        // filter: user is not member, if there is filterBy use it
+        let userId = Configuration.getUserId() ?? ""
+        filteredGroups = groups.filter{ (group:Group) in
+            if group.members.contains(userId) {
+                return false
+            }
+            if !by.isEmpty {
+                return group.name.lowercased().contains(filter)
+            }
+            return true
         }
 
         self.tableView?.reloadData()

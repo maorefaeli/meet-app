@@ -12,10 +12,9 @@ class User {
     var uid: String = ""
     var name: String = ""
     var imageURL: String = ""
+//    var groupIds: [String] = []
     
-    // Default Constructor (No parameter)
     init()  {
-         
     }
      
     init (uid: String, name: String, imageURL: String = "")  {
