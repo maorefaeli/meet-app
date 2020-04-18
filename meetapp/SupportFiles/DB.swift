@@ -89,7 +89,7 @@ class DB {
         
         // group.members.append(member) // to add
         // group.members = group.members.filter{ $0 != member } // to remove
-        func updateMembers(_ group: Group, member: String, onComplete: ((Error?) -> Void)?) {
+        func updateMembers(_ group: Group, onComplete: ((Error?) -> Void)?) {
             collection.child(group.guid).setValue(["members": group.members]) { (error:Error?, ref: DatabaseReference) in
                 onComplete?(error)
             }
