@@ -21,20 +21,17 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     @IBOutlet weak var groupsCollectionView: UICollectionView!
     func getUserUserById(uid: String) {
-        //  Setup firebase database
-        ref = Database.database().reference()
-        ref?.child("users").child(uid).observeSingleEvent(of: .value, with: { (snapshot) in
-          // Get profile value
-          let value = snapshot.value as? NSDictionary
-          if value == nil {
-            self.performSegue(withIdentifier: "homeToProfile", sender: Any?.self)
-          } else {
-            self.user = User.init(uid: uid, name: value?["name"] as? String ?? "")
-            self.lblWelcome.text = "Welcome, \(self.user.name)"
+        DB.shared.users.get(
+            uid,
+            onSuccess: { (user:User) in
+                self.user = user
+                self.lblWelcome.text = "Welcome, \(self.user.name)"
+            },
+            onError: { (error:Error) in
+                print(error.localizedDescription)
+                self.performSegue(withIdentifier: "homeToProfile", sender: Any?.self)
             }
-          }) { (error) in
-            print(error.localizedDescription)
-        }
+        )
     }
     
     override func viewDidLoad() {

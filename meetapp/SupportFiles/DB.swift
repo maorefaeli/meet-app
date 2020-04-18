@@ -24,15 +24,19 @@ class DB {
             super.init(ref, name:"users")
         }
 
-        func get(_ uid: String, completion: @escaping (User) -> Void) {
+        func get(_ uid: String, onSuccess: @escaping (User) -> Void) {
+            get(uid, onSuccess: onSuccess, onError: nil)
+        }
+        
+        func get(_ uid: String, onSuccess: @escaping (User) -> Void, onError: ((Error) -> Void)?) {
             collection.child(uid).observeSingleEvent(of: .value, with: { (snapshot) in
-                let user:User = User()
-                user.uid = uid
                 if let value = snapshot.value as? NSDictionary {
-                    user.name = value["name"] as? String ?? ""
-                    user.imageURL = value["userPhoto"] as? String ?? ""
+                    onSuccess(User(uid: uid,
+                                   name: value["name"] as? String ?? "",
+                                   imageURL: value["userPhoto"] as? String ?? ""))
+                } else {
+                    onError?(CustomError.general(desc: "User data is corrupted"))
                 }
-                completion(user)
             })
         }
         

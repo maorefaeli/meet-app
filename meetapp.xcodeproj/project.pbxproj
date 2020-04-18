@@ -20,6 +20,7 @@
 		84F9B673241926AC0007FFB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84F9B672241926AC0007FFB6 /* Assets.xcassets */; };
 		84F9B676241926AC0007FFB6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84F9B674241926AC0007FFB6 /* LaunchScreen.storyboard */; };
 		AB121CA647D5027A5A5A6478 /* Pods_meetapp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92CCCD54270BB877A373F971 /* Pods_meetapp.framework */; };
+		EE89A9E0244AF6F000BAF01B /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE89A9DF244AF6F000BAF01B /* Errors.swift */; };
 		EEA28DCD24420CA700E2231E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EEA28DCC24420CA700E2231E /* GoogleService-Info.plist */; };
 		EEA28DD324488BD600E2231E /* DB.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA28DD224488BD600E2231E /* DB.swift */; };
 /* End PBXBuildFile section */
@@ -42,6 +43,7 @@
 		904569036A272499107123E6 /* Pods-meetapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-meetapp.debug.xcconfig"; path = "Target Support Files/Pods-meetapp/Pods-meetapp.debug.xcconfig"; sourceTree = "<group>"; };
 		92CCCD54270BB877A373F971 /* Pods_meetapp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_meetapp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A433CFDC79275C52290181F4 /* Pods-meetapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-meetapp.release.xcconfig"; path = "Target Support Files/Pods-meetapp/Pods-meetapp.release.xcconfig"; sourceTree = "<group>"; };
+		EE89A9DF244AF6F000BAF01B /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		EEA28DCC24420CA700E2231E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EEA28DD224488BD600E2231E /* DB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DB.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -126,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				EEA28DD224488BD600E2231E /* DB.swift */,
+				EE89A9DF244AF6F000BAF01B /* Errors.swift */,
 			);
 			path = SupportFiles;
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 				84F9B66E241926A90007FFB6 /* LoginController.swift in Sources */,
 				84ECFC372438F7E9005A3DFF /* User.swift in Sources */,
 				84F9B66A241926A90007FFB6 /* AppDelegate.swift in Sources */,
+				EE89A9E0244AF6F000BAF01B /* Errors.swift in Sources */,
 				84BB25BD2419841700ED6A60 /* ProfileViewController.swift in Sources */,
 				84F9B66C241926A90007FFB6 /* SceneDelegate.swift in Sources */,
 				84BB25BB241980D700ED6A60 /* HomeViewController.swift in Sources */,

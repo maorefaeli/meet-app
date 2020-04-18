@@ -16,26 +16,31 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet var tbName: UITextField!
     @IBOutlet weak var userImage: UIImageView!
-    var ref:DatabaseReference?
     var imagePicker: UIImagePickerController?
     var storageRef = Storage.storage().reference(forURL: "gs://meetapp-f23d1.appspot.com")
     var imageURL: String = ""
     var name: String = ""
     
     func getUserProfile(uid: String) {
-        DB.shared.users.get(uid) { (user: User) in
-            self.name = user.name
-            if self.name != "" {
-                self.tbName.text = self.name
-            }
-            
-            self.imageURL = user.imageURL
-            if self.imageURL != "" {
-                self.getImage(url: self.imageURL) { (image) in
-                    self.userImage.image = image
+        DB.shared.users.get(
+            uid,
+            onSuccess: { (user: User) in
+                self.name = user.name
+                if self.name != "" {
+                    self.tbName.text = self.name
                 }
+                
+                self.imageURL = user.imageURL
+                if self.imageURL != "" {
+                    self.getImage(url: self.imageURL) { (image) in
+                        self.userImage.image = image
+                    }
+                }
+            },
+            onError: { (error:Error) in
+                print(error.localizedDescription)
             }
-        }
+        )
         spinner.stopAnimating()
         spinner.hidesWhenStopped = true
     }
