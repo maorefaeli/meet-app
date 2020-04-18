@@ -10,7 +10,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="2dB-h9-Lfp">
             <objects>
-                <tabBarController id="meA-Dw-g1r" sceneMemberID="viewController">
+                <tabBarController modalPresentationStyle="fullScreen" id="meA-Dw-g1r" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="KK0-bb-ZKr"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4vd-qt-wCi">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
@@ -259,7 +259,7 @@
         <!--Home View Controller-->
         <scene sceneID="j4N-Xh-bkF">
             <objects>
-                <viewController id="rZq-m8-jSX" customClass="HomeViewController" customModule="meetapp" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="rZq-m8-jSX" customClass="HomeViewController" customModule="meetapp" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dfp-hB-y2x">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -336,7 +336,7 @@
         <!--Group View Controller-->
         <scene sceneID="nqC-SG-sEl">
             <objects>
-                <viewController id="j8p-15-KjV" customClass="GroupViewController" customModule="meetapp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="j8p-15-KjV" customClass="GroupViewController" customModule="meetapp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uRK-uz-4xV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
