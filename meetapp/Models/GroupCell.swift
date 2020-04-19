@@ -14,10 +14,16 @@ public class GroupCell: UITableViewCell {
     @IBOutlet weak var city: UILabel!
     @IBOutlet weak var date: UILabel!
     @IBOutlet weak var joinButton: UIButton!
+    @IBOutlet weak var joinText: UILabel!
     @IBOutlet weak var openInfoButton: UIButton!
+    var isMyGroup = false
     
     var group: Group! {
         didSet {
+            if isMyGroup {
+                joinButton.isHidden = true
+                joinText.isHidden = true
+            }
             groupName.text = group.name
             groupSubject.text = group.topic
             groupLevel.text = group.level

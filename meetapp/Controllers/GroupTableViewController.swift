@@ -36,6 +36,7 @@ class GroupsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "groupCell", for: indexPath) as! GroupCell
         cell.group = self.groups[indexPath.row]
+        cell.isMyGroup = true
         cell.openInfoCallback = { () in
             self.performSegue(withIdentifier: "groupDetails", sender: Any?.self)
             self.destinationVC?.group = self.groups[indexPath.row]
