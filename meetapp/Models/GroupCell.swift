@@ -15,7 +15,7 @@ public class GroupCell: UITableViewCell {
     @IBOutlet weak var membersString: UILabel!
     @IBOutlet weak var date: UILabel!
     @IBOutlet weak var membersArea: MembersAreaViewController!
-    @IBOutlet weak var joinButton: UIImageView!
+    @IBOutlet weak var joinButton: UIButton!
     
     var group: Group! {
         didSet {
@@ -23,17 +23,12 @@ public class GroupCell: UITableViewCell {
             groupSubject.text = group.topic
             groupLevel.text = group.level
             city.text = group.city
-            membersArea.members = []
+            DB.shared.users.getUsersOfGroup(group, onComplete: {(users: [User]) in
+                self.membersArea.members = users
+            })
+            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tap))
+            joinButton.addGestureRecognizer(tapGesture)
         }
-    }
-
-    func setGroup(group: Group) {
-        groupName.text = group.name
-        groupSubject.text = group.topic
-        groupLevel.text = group.level
-        city.text = group.city
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tap))
-        joinButton.addGestureRecognizer(tapGesture)
     }
 
     required init?(coder decoder: NSCoder) {

@@ -283,6 +283,7 @@
                                     <outlet property="groupLevel" destination="JIN-ub-ktB" id="t2W-vx-cKO"/>
                                     <outlet property="groupName" destination="Vq4-5a-8ws" id="QU1-UV-T05"/>
                                     <outlet property="groupSubject" destination="bCm-yf-Mzs" id="1tI-Or-2t2"/>
+                                    <outlet property="joinButton" destination="ZqY-Y8-zN1" id="5LS-xK-x7Y"/>
                                     <outlet property="membersArea" destination="Zv5-6A-fVi" id="jzF-Wu-4z4"/>
                                 </connections>
                             </tableViewCell>
