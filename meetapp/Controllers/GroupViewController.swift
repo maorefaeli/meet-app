@@ -21,7 +21,6 @@ class GroupViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet var tbGroupCity: UITextField!
     @IBOutlet var tbTopic: UITextField!
     @IBOutlet var scLevel: UISegmentedControl!
-    @IBOutlet weak var datePicker: UIDatePicker!
     
     @IBAction func createGroup(_ sender: Any) {
         let uid = Auth.auth().currentUser!.uid
