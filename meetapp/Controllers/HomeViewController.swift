@@ -27,13 +27,6 @@ class HomeViewController: UIViewController {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         self.modalPresentationStyle = .fullScreen
-        DB.shared.groups.observeAll(onSuccess: { (groups:[Group]) in
-            self.groups = groups
-            self.groupsController?.groups =  groups
-            self.mapsController?.groups = groups
-            self.tapSearch()
-            self.spinner.stopAnimating()
-        })
     }
 
     func getUserById(uid: String) {
@@ -51,8 +44,16 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.spinner.startAnimating()
         self.spinner.hidesWhenStopped = true
+        self.spinner.startAnimating()
+        
+        DB.shared.groups.observeAll(onSuccess: { (groups:[Group]) in
+            self.groups = groups
+            self.groupsController?.groups =  groups
+            self.mapsController?.groups = groups
+            self.tapSearch() // will also stop animating
+        })
+        
         for child in children {
             if let groups = child as? GroupsTableViewController {
                 self.groupsController = groups
@@ -82,10 +83,11 @@ class HomeViewController: UIViewController {
         listButton.addGestureRecognizer(listTapGesture)
     }
 
-    @objc func tapSearch() {       
+    @objc func tapSearch() {
+        self.spinner.startAnimating()
         var filteredGroups: [Group] = []
         
-        let searchBy = searchInput.text ?? ""
+        let searchBy = searchInput?.text ?? ""
         let userId = Configuration.getUserId() ?? ""
         
         filteredGroups = groups.filter{ (group:Group) in
@@ -93,13 +95,16 @@ class HomeViewController: UIViewController {
                 return false
             }
             if !searchBy.isEmpty {
-                return group.name.lowercased().contains(searchBy)
+                return (group.name.lowercased().contains(searchBy) ||
+                        group.topic.lowercased().contains(searchBy) ||
+                        group.city.lowercased().contains(searchBy))
             }
             return true
         }
         
         self.groupsController?.groups = filteredGroups
         self.mapsController?.groups = filteredGroups
+        self.spinner.stopAnimating()
     }
 
     @objc func tapMap() {
