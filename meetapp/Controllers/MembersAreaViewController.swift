@@ -6,25 +6,24 @@
 import Foundation
 import UIKit
 
-class MembersAreaViewController :  UICollectionViewController {
-    var members: [User]! {
+class MembersAreaViewController : UICollectionView {
+    var members: [User]! = [] {
         didSet {
-            self.collectionView.reloadData()
+            reloadData()
         }
     }
+    override var numberOfSections: Int {
+        guard let members = members else {
+            return 0
+        }
 
-    required init?(coder decoder: NSCoder) {
-        super.init(coder: decoder)
+        return members.count
     }
 
-//    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-//        members.count
-//    }
-//
-//    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: "memberCell", for: indexPath) as! MemberCell
-//        cell.member = members[indexPath.row]
-//
-//        return cell
-//    }
+    override func cellForItem(at indexPath: IndexPath) -> UICollectionViewCell? {
+        let cell = dequeueReusableCell(withReuseIdentifier: "memberCell", for: indexPath) as! MemberCell
+        cell.member = members?[indexPath.row]
+
+        return cell
+    }
 }
