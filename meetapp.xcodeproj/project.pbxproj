@@ -14,6 +14,7 @@
 		84083E7459C18320A3161410 /* GroupInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840839EBF98E13A5E48F031C /* GroupInfoViewController.swift */; };
 		84083E9BE646A27216074D64 /* MembersAreaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84083A86A52F479D82B614DC /* MembersAreaViewController.swift */; };
 		84083FB019E0EDEA9EB6A69A /* GroupTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840831B229F8191CD136AE24 /* GroupTableViewController.swift */; };
+		845FD2C8244C7D2500FC203E /* LocalDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845FD2C7244C7D2500FC203E /* LocalDB.swift */; };
 		84BB25BB241980D700ED6A60 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BB25BA241980D700ED6A60 /* HomeViewController.swift */; };
 		84BB25BD2419841700ED6A60 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BB25BC2419841700ED6A60 /* ProfileViewController.swift */; };
 		84ECFC372438F7E9005A3DFF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ECFC362438F7E9005A3DFF /* User.swift */; };
@@ -42,6 +43,7 @@
 		84083A86A52F479D82B614DC /* MembersAreaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MembersAreaViewController.swift; sourceTree = "<group>"; };
 		84083BCDD6E402D47A4CE32C /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		84083E79A2967EB527307162 /* MemberCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberCell.swift; sourceTree = "<group>"; };
+		845FD2C7244C7D2500FC203E /* LocalDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDB.swift; sourceTree = "<group>"; };
 		84BB25BA241980D700ED6A60 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		84BB25BC2419841700ED6A60 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		84ECFC362438F7E9005A3DFF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 				EE89A9DF244AF6F000BAF01B /* Errors.swift */,
 				EE89A9E1244B0D0600BAF01B /* Helper.swift */,
 				EE89A9E3244B1DCE00BAF01B /* Configuration.swift */,
+				845FD2C7244C7D2500FC203E /* LocalDB.swift */,
 			);
 			path = SupportFiles;
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 			files = (
 				84ECFC3B24390975005A3DFF /* GroupViewController.swift in Sources */,
 				84ECFC392439084E005A3DFF /* Group.swift in Sources */,
+				845FD2C8244C7D2500FC203E /* LocalDB.swift in Sources */,
 				EE89A9E4244B1DCE00BAF01B /* Configuration.swift in Sources */,
 				EEA28DD324488BD600E2231E /* DB.swift in Sources */,
 				84F9B66E241926A90007FFB6 /* LoginController.swift in Sources */,

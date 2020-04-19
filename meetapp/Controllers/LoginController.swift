@@ -48,16 +48,22 @@ class LoginController: UIViewController {
             Helper.showToast(controller: self, message: "Error loading local data", seconds: 5)
         }
         
-        let createTableQuery = "CREATE TABLE IF NOT EXISTS Groups (id INTEGER PRIMARY KEY AUTOINCREMENT, guid TEXT)"
+        let createTableQuery = "CREATE TABLE IF NOT EXISTS Uids (id INTEGER PRIMARY KEY AUTOINCREMENT, uid TEXT)"
         if sqlite3_exec(db, createTableQuery, nil, nil, nil) != SQLITE_OK {
             Helper.showToast(controller: self, message: "Error loading local data", seconds: 5)
         }
         
-        let insertQuery = "INSERT INTO Groups (guid) VALUES (?)"
+        let insertQuery = "INSERT INTO Uids (uid) VALUES (?)"
         if sqlite3_prepare(db, insertQuery, -1, &stmnt, nil) != SQLITE_OK {
             Helper.showToast(controller: self, message: "Error loading local data", seconds: 5)
         }
-        self.getUserGroups(uid: uid)
+        if sqlite3_bind_text(stmnt, 1, Auth.auth().currentUser!.uid, -1, nil) != SQLITE_OK {
+            Helper.showToast(controller: self, message: "Error loading local data", seconds: 5)
+            return
+        }
+        sqlite3_step(stmnt)
+        
+        /*self.getUserGroups(uid: uid)
         for userGroup in userGroups {
             if sqlite3_bind_text(stmnt, 1, userGroup.guid, -1, nil) != SQLITE_OK {
                 Helper.showToast(controller: self, message: "Error loading local data", seconds: 5)
@@ -68,8 +74,7 @@ class LoginController: UIViewController {
                 return
             }
             print("Added 1 item")
-        }
-        
+        }*/
         performSegue(withIdentifier: "goHome", sender: Any?.self)
     }
     
@@ -99,6 +104,13 @@ class LoginController: UIViewController {
             }
             self.tbStatus.text = "User created!"
             self.saveUserAndGoHome(initialName: email)
+        }
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if LocalDB.isLoggedIn() {
+            print("User is already logged in")
+            performSegue(withIdentifier: "goHome", sender: Any?.self)
         }
     }
 }

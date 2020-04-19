@@ -25,11 +25,14 @@ class ProfileViewController: UIViewController {
         return UIImage(named: "Logo")
     }
 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let groups: [Group] = [] // TODO: kobi- myGroups
+    /*override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        var groups: [Group] = [] // TODO: kobi- myGroups
+        LocalDB.getMyGroups(onSuccess: { (MyGroups:[Group]) in
+            groups = MyGroups
+        })
         let destinationVC = segue.destination as! GroupsTableViewController
         destinationVC.groups = groups
-    }
+    }*/
     
     func getUserProfile(uid: String) {
         DB.shared.users.get(
