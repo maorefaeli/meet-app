@@ -14,18 +14,14 @@ public class GroupCell: UITableViewCell {
     @IBOutlet weak var city: UILabel!
     @IBOutlet weak var membersString: UILabel!
     @IBOutlet weak var date: UILabel!
-    @IBOutlet weak var membersArea: MembersAreaViewController!
     @IBOutlet weak var joinButton: UIButton!
-    
+
     var group: Group! {
         didSet {
             groupName.text = group.name
             groupSubject.text = group.topic
             groupLevel.text = group.level
             city.text = group.city
-            DB.shared.users.getUsersOfGroup(group, onComplete: {(users: [User]) in
-                self.membersArea.members = users
-            })
             let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tap))
             joinButton.addGestureRecognizer(tapGesture)
         }

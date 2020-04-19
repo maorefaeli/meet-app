@@ -8,7 +8,7 @@ import UIKit
 import FirebaseDatabase
 
 class GroupsTableViewController: UITableViewController {
-    let cellHeight: CGFloat = 200
+    let cellHeight: CGFloat = 140
     var ref:DatabaseReference?
     var groups: [Group] = [] {
         didSet {
