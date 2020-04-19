@@ -31,6 +31,7 @@ class HomeViewController: UIViewController {
             self.groups = groups
             self.groupsController?.groups =  groups
             self.mapsController?.groups = groups
+            self.tapSearch()
             self.spinner.stopAnimating()
         })
     }
