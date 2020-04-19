@@ -24,6 +24,12 @@ class ProfileViewController: UIViewController {
     func getDefaultImage() -> UIImage? {
         return UIImage(named: "Logo")
     }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let groups: [Group] = [] // TODO: kobi- myGroups
+        let destinationVC = segue.destination as! GroupsTableViewController
+        destinationVC.groups = groups
+    }
     
     func getUserProfile(uid: String) {
         DB.shared.users.get(
@@ -33,7 +39,7 @@ class ProfileViewController: UIViewController {
                 if self.name != "" {
                     self.tbName.text = self.name
                 }
-                
+
                 self.imageURL = user.imageURL
                 if self.imageURL != "" {
                     self.getImage(url: self.imageURL) { (image) in

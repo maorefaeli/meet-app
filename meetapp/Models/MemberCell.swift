@@ -5,6 +5,7 @@
 
 import Foundation
 import UIKit
+import FirebaseStorage
 
 class MemberCell : UICollectionViewCell{
     @IBOutlet weak var memberImage: UIImageView!
@@ -12,12 +13,30 @@ class MemberCell : UICollectionViewCell{
     
     var member: User! {
         didSet {
-            memberImage.image = UIImage(contentsOfFile: member.imageURL)
+            if member.imageURL.isEmpty {
+                memberImage.image = UIImage(named: "Logo")
+            } else {
+                self.getImage(url: member.imageURL) { (image) in
+                    self.memberImage.image = image
+                }
+            }
             memberName.text = member.name
         }
     }
 
     required init?(coder decoder: NSCoder) {
         super.init(coder: decoder)
+    }
+
+    func getImage(url:String, callback:@escaping (UIImage?)->Void) {
+        let ref = Storage.storage().reference(forURL: url)
+        ref.getData(maxSize: 10 * 1024 * 1024) { data, error in
+            if error != nil {
+                callback(nil)
+            } else {
+                let image = UIImage(data: data!)
+                callback(image)
+            }
+        }
     }
 }
