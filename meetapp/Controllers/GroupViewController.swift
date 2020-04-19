@@ -35,7 +35,7 @@ class GroupViewController: UIViewController, CLLocationManagerDelegate {
             members: [uid]
         )
         group.generateGuid()
-        DB.shared.groups.create(group)
+        DB.shared.groups.upsert(group)
         performSegue(withIdentifier: "createGroupToHome", sender: Any?.self)
     }
     

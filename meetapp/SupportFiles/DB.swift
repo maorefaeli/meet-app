@@ -81,7 +81,13 @@ class DB {
             super.init(ref, name:"groups")
         }
         
-        func create(_ group: Group) {
+        func upsert(_ group: Group) {
+            upsert(group, onComplete: nil)
+        }
+        
+        // group.members.append(member) // to add
+        // group.members = group.members.filter{ $0 != member } // to remove
+        func upsert(_ group: Group, onComplete: ((Error?) -> Void)?) {
             collection.child(group.guid).setValue([
                 "guid": group.guid,
                 "owner": group.owner,
@@ -92,7 +98,9 @@ class DB {
                 "long": group.long,
                 "lat": group.lat,
                 "members": group.members
-            ])
+            ], withCompletionBlock: { (error:Error?, ref: DatabaseReference) in
+                onComplete?(error)
+            })
         }
         
         func observeAll(onSuccess: @escaping ([Group]) -> Void) {
@@ -111,17 +119,6 @@ class DB {
                     onSuccess(groups)
                 }
             }
-        }
-        
-        // group.members.append(member) // to add
-        // group.members = group.members.filter{ $0 != member } // to remove
-        func updateMembers(_ group: Group, onComplete: ((Error?) -> Void)?) {
-            collection.child(group.guid).setValue(
-                ["members": group.members],
-                withCompletionBlock: { (error:Error?, ref: DatabaseReference) in
-                    onComplete?(error)
-                }
-            )
         }
         
         func delete(guid: String, onComplete: ((Error?) -> Void)?) {

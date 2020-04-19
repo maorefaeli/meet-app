@@ -30,6 +30,7 @@
 		EE89A9E4244B1DCE00BAF01B /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE89A9E3244B1DCE00BAF01B /* Configuration.swift */; };
 		EEA28DCD24420CA700E2231E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EEA28DCC24420CA700E2231E /* GoogleService-Info.plist */; };
 		EEA28DD324488BD600E2231E /* DB.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA28DD224488BD600E2231E /* DB.swift */; };
+		EEE076D8244C724900A54A0B /* MapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE076D7244C724900A54A0B /* MapAnnotation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +62,7 @@
 		EEA28DCC24420CA700E2231E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EEA28DD224488BD600E2231E /* DB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DB.swift; sourceTree = "<group>"; };
 		EEE076D4244B8E0F00A54A0B /* Location.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Location.gpx; sourceTree = "<group>"; };
+		EEE076D7244C724900A54A0B /* MapAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAnnotation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +164,7 @@
 				84ECFC382439084E005A3DFF /* Group.swift */,
 				84083311BBFB5922312C7A02 /* GroupCell.swift */,
 				84083E79A2967EB527307162 /* MemberCell.swift */,
+				EEE076D7244C724900A54A0B /* MapAnnotation.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 				84BB25BD2419841700ED6A60 /* ProfileViewController.swift in Sources */,
 				84F9B66C241926A90007FFB6 /* SceneDelegate.swift in Sources */,
 				84BB25BB241980D700ED6A60 /* HomeViewController.swift in Sources */,
+				EEE076D8244C724900A54A0B /* MapAnnotation.swift in Sources */,
 				EE89A9E2244B0D0600BAF01B /* Helper.swift in Sources */,
 				84083FB019E0EDEA9EB6A69A /* GroupTableViewController.swift in Sources */,
 				84083C32A1AA608170563DB7 /* GroupCell.swift in Sources */,

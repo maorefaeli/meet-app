@@ -38,7 +38,7 @@ public class GroupCell: UITableViewCell {
     @objc func tap() {
         print("add user to group")
         group.members.append(Configuration.getUserId()!)
-        DB.shared.groups.updateMembers(group) { (error:Error?) in
+        DB.shared.groups.upsert(group) { (error:Error?) in
             if error == nil {
                 print("user added to group")
             } else {

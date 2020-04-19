@@ -18,6 +18,7 @@ class MapViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        map.delegate = self
     }
 
     func showGroups() {
@@ -29,16 +30,35 @@ class MapViewController: UIViewController {
             }
             
             let coordinate = CLLocationCoordinate2D(latitude: lat, longitude: long)
-            let annotation = MKPointAnnotation()
-            annotation.coordinate = coordinate
-            annotation.title = "\(group.name) (\(group.city))"
-            annotation.subtitle = "\(group.topic) - \(group.level)"
-            map.addAnnotation(annotation)
-            
+            map.addAnnotation(MapAnnotation(group: group, coordinate: coordinate))
+
             // Display the are of the last point
             let pin = MKPlacemark(coordinate: coordinate)
             let coordinateRegion = MKCoordinateRegion(center: pin.coordinate, latitudinalMeters: 2000, longitudinalMeters: 2000)
             map.setRegion(coordinateRegion, animated: true)
         }
+    }
+}
+
+extension MapViewController: MKMapViewDelegate
+{
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView?
+    {
+        let annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "annotationView")
+        annotationView.canShowCallout = true
+        annotationView.rightCalloutAccessoryView = UIButton.init(type: UIButton.ButtonType.contactAdd)
+
+        return annotationView
+    }
+
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl)
+    {
+        guard let annotation = view.annotation as? MapAnnotation else
+        {
+            return
+        }
+
+        annotation.group.members.append(Configuration.getUserId()!)
+        DB.shared.groups.upsert(annotation.group)
     }
 }
