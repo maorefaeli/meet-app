@@ -60,5 +60,6 @@ extension MapViewController: MKMapViewDelegate
 
         annotation.group.members.append(Configuration.getUserId()!)
         DB.shared.groups.upsert(annotation.group)
+        Helper.showToast(controller: self, message: "Group \(annotation.group.name) was added", seconds: 2)
     }
 }
