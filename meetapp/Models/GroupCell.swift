@@ -41,6 +41,14 @@ public class GroupCell: UITableViewCell {
     }
 
     @objc func tap() {
-        // join group here
+        print("add user to group")
+        group.members.append(Configuration.getUserId()!)
+        DB.shared.groups.updateMembers(group) { (error:Error?) in
+            if error == nil {
+                print("user added to group")
+            } else {
+                print("user could not be added")
+            }
+        }
     }
 }
