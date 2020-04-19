@@ -19,6 +19,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var mapButton: UIButton!
     @IBOutlet weak var mapContainer: UIView!
 
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     var groups: [Group] = []
     var groupsController: GroupsTableViewController? = nil
     var mapsController: MapViewController? = nil
@@ -30,6 +31,7 @@ class HomeViewController: UIViewController {
             self.groups = groups
             self.groupsController?.groups =  groups
             self.mapsController?.groups = groups
+            self.spinner.stopAnimating()
         })
     }
 
@@ -48,7 +50,8 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.spinner.startAnimating()
+        self.spinner.hidesWhenStopped = true
         for child in children {
             if let groups = child as? GroupsTableViewController {
                 self.groupsController = groups
