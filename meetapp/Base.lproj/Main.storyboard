@@ -644,7 +644,7 @@
                         <outlet property="spinner" destination="hN2-ne-TVg" id="N3M-uQ-XLE"/>
                         <outlet property="tbName" destination="TUL-GY-Ejw" id="iq0-jH-Twb"/>
                         <outlet property="userImage" destination="oQA-vi-7VH" id="I5C-39-bPx"/>
-                        <segue destination="iRk-0Q-HC2" kind="show" identifier="profileToMygroups" id="Jcg-TX-ldF"/>
+                        <segue destination="iRk-0Q-HC2" kind="show" identifier="profileToMyGroups" id="Jcg-TX-ldF"/>
                         <segue destination="meA-Dw-g1r" kind="show" identifier="profileToHome" id="Gw6-lL-Y8a"/>
                     </connections>
                 </viewController>

@@ -16,6 +16,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet var tbName: UITextField!
     @IBOutlet weak var userImage: UIImageView!
+    var groupsController: GroupsTableViewController? = nil
     var imagePicker: UIImagePickerController?
     var storageRef = Storage.storage().reference(forURL: "gs://meetapp-f23d1.appspot.com")
     var imageURL: String = ""
@@ -24,15 +25,6 @@ class ProfileViewController: UIViewController {
     func getDefaultImage() -> UIImage? {
         return UIImage(named: "Logo")
     }
-
-    /*override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        var groups: [Group] = [] // TODO: kobi- myGroups
-        LocalDB.getMyGroups(onSuccess: { (MyGroups:[Group]) in
-            groups = MyGroups
-        })
-        let destinationVC = segue.destination as! GroupsTableViewController
-        destinationVC.groups = groups
-    }*/
     
     func getUserProfile(uid: String) {
         DB.shared.users.get(
@@ -92,7 +84,11 @@ class ProfileViewController: UIViewController {
     }
     
     @IBAction func showMyGroups(_ sender: Any) {
-        performSegue(withIdentifier: "profileToMygroups", sender: Any?.self)
+        let uid = Configuration.getUserId()!
+        DB.shared.groups.observeAll(onSuccess: { (groups:[Group]) in
+            self.groupsController?.groups = groups.filter{ $0.members.contains(uid) }
+        })
+        self.performSegue(withIdentifier: "profileToMyGroups", sender: Any?.self)
     }
     
     override func viewDidLoad() {
@@ -100,7 +96,6 @@ class ProfileViewController: UIViewController {
         spinner.hidesWhenStopped = true
         spinner.startAnimating()
         getUserProfile(uid: Auth.auth().currentUser!.uid)
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func uploadImage(_ sender: Any) {
