@@ -27,6 +27,8 @@ public class GroupCell: UITableViewCell {
         }
     }
 
+    var openInfoCallback: (() -> Void)?
+    
     required init?(coder decoder: NSCoder) {
         super.init(coder: decoder)
     }
