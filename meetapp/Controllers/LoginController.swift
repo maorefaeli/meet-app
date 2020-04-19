@@ -15,8 +15,6 @@ class LoginController: UIViewController {
     
     @IBOutlet weak var teEmail: UITextField!
     @IBOutlet weak var tePassword: UITextField!
-    //@IBOutlet var tbEmail: UITextField!
-    //@IBOutlet var tbPassword: UITextField!
     @IBOutlet weak var tbStatus: UILabel!
     
     var userGroups: [Group] = []
@@ -32,10 +30,14 @@ class LoginController: UIViewController {
        })
     }
         
-    func saveUserAndGoHome(name: String? = nil) {
+    func saveUserAndGoHome(initialName: String? = nil) {
         let uid = Auth.auth().currentUser!.uid
         Configuration.saveUserId(uid)
-        DB.shared.users.update(User(uid: uid, name: name ?? ""))
+        
+        // Save new user with initialName
+        if initialName != nil {
+            DB.shared.users.update(User(uid: uid, name: initialName!))
+        }
         
         var db: OpaquePointer?
         var stmnt: OpaquePointer?
@@ -90,13 +92,13 @@ class LoginController: UIViewController {
         let email = teEmail.text!
         let password = tePassword.text!
         Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
-            if(error != nil) {
+            if error != nil {
                 self.tbStatus.text = "Error"
                 print(error!)
                 return
             }
             self.tbStatus.text = "User created!"
-            self.saveUserAndGoHome(name: email)
+            self.saveUserAndGoHome(initialName: email)
         }
     }
 }
