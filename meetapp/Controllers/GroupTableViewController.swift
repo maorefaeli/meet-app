@@ -11,6 +11,7 @@ class GroupsTableViewController: UITableViewController {
     let cellHeight: CGFloat = 140
     var ref:DatabaseReference?
     var destinationVC: GroupInfoViewController? = nil;
+    var isMyGroups = false
     var groups: [Group] = [] {
         didSet {
             self.tableView.reloadData()
@@ -35,7 +36,7 @@ class GroupsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "groupCell", for: indexPath) as! GroupCell
-        cell.isMyGroup = true
+        cell.isMyGroup = self.isMyGroups
         cell.group = self.groups[indexPath.row]
         cell.openInfoCallback = { () in
             self.performSegue(withIdentifier: "groupDetails", sender: Any?.self)

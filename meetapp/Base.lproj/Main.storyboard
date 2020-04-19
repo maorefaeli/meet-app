@@ -267,7 +267,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g45-fn-qPy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-6684.057971014493" y="1347.65625"/>
+            <point key="canvasLocation" x="-6930" y="1691"/>
         </scene>
         <!--Groups Table View Controller-->
         <scene sceneID="C7N-Nj-UXT">
@@ -341,7 +341,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EbR-Aj-8bx">
-                                            <rect key="frame" x="0.0" y="-1" width="414" height="129"/>
+                                            <rect key="frame" x="0.0" y="-1" width="313" height="129"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <connections>
                                                 <segue destination="dX9-LH-8h2" kind="show" identifier="groupDetails" id="W30-mW-hfZ"/>

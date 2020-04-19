@@ -88,6 +88,7 @@ class ProfileViewController: UIViewController {
             let uid = Configuration.getUserId()!
             DB.shared.groups.observeAll(onSuccess: { (groups:[Group]) in
                 destinationVC.groups = groups.filter{ $0.members.contains(uid) }
+                destinationVC.isMyGroups = true
             })
         }
     }
