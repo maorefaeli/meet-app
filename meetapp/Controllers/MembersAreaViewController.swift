@@ -6,14 +6,14 @@
 import Foundation
 import UIKit
 
-class MembersAreaViewController : UICollectionViewController {
+class MembersAreaViewController : UITableViewController {
     var members: [User]! = [] {
         didSet {
-            collectionView.reloadData()
+            tableView.reloadData()
         }
     }
 
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let members = members else {
             return 0
         }
@@ -21,8 +21,12 @@ class MembersAreaViewController : UICollectionViewController {
         return members.count
     }
 
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "memberCell", for: indexPath) as! MemberCell
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+         120
+    }
+
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "memberCell") as! MemberCell
         cell.member = members?[indexPath.row]
 
         return cell

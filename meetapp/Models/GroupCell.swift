@@ -12,18 +12,22 @@ public class GroupCell: UITableViewCell {
     @IBOutlet weak var groupSubject: UILabel!
     @IBOutlet weak var groupLevel: UILabel!
     @IBOutlet weak var city: UILabel!
-    @IBOutlet weak var membersString: UILabel!
     @IBOutlet weak var date: UILabel!
     @IBOutlet weak var joinButton: UIButton!
-
+    @IBOutlet weak var openInfoButton: UIButton!
+    
     var group: Group! {
         didSet {
             groupName.text = group.name
             groupSubject.text = group.topic
             groupLevel.text = group.level
             city.text = group.city
+
             let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tap))
             joinButton.addGestureRecognizer(tapGesture)
+
+            let openInfoGesture = UITapGestureRecognizer(target: self, action: #selector(openInfo))
+            openInfoButton.addGestureRecognizer(openInfoGesture)
         }
     }
 
@@ -43,5 +47,9 @@ public class GroupCell: UITableViewCell {
                 print("user could not be added")
             }
         }
+    }
+
+    @objc func openInfo() {
+        self.openInfoCallback?()
     }
 }

@@ -7,7 +7,7 @@ import Foundation
 import UIKit
 import FirebaseStorage
 
-class MemberCell : UICollectionViewCell{
+class MemberCell : UITableViewCell{
     @IBOutlet weak var memberImage: UIImageView!
     @IBOutlet weak var memberName: UILabel!
     

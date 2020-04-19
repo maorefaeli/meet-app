@@ -10,10 +10,15 @@ import FirebaseDatabase
 class GroupsTableViewController: UITableViewController {
     let cellHeight: CGFloat = 140
     var ref:DatabaseReference?
+    var destinationVC: GroupInfoViewController? = nil;
     var groups: [Group] = [] {
         didSet {
             self.tableView.reloadData()
         }
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        destinationVC = segue.destination as! GroupInfoViewController
     }
 
     required init?(coder: NSCoder) {
@@ -32,7 +37,8 @@ class GroupsTableViewController: UITableViewController {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "groupCell", for: indexPath) as! GroupCell
         cell.group = self.groups[indexPath.row]
         cell.openInfoCallback = { () in
-            self.performSegue(withIdentifier: "TODO", sender: Any?.self)
+            self.performSegue(withIdentifier: "groupDetails", sender: Any?.self)
+            self.destinationVC?.group = self.groups[indexPath.row]
         }
 
         return cell
