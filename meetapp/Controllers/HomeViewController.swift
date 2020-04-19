@@ -85,12 +85,14 @@ class HomeViewController: UIViewController {
     @objc func tapSearch() {       
         var filteredGroups: [Group] = []
         
+        let searchBy = searchInput.text ?? ""
         let userId = Configuration.getUserId() ?? ""
+        
         filteredGroups = groups.filter{ (group:Group) in
             if group.members.contains(userId) {
                 return false
             }
-            if let searchBy = searchInput.text {
+            if !searchBy.isEmpty {
                 return group.name.lowercased().contains(searchBy)
             }
             return true
