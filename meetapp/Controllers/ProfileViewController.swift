@@ -82,12 +82,16 @@ class ProfileViewController: UIViewController {
             }
         })
     }
-    
-    @IBAction func showMyGroups(_ sender: Any) {
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destinationVC = segue.destination as! GroupsTableViewController
         let uid = Configuration.getUserId()!
         DB.shared.groups.observeAll(onSuccess: { (groups:[Group]) in
-            self.groupsController?.groups = groups.filter{ $0.members.contains(uid) }
+            destinationVC.groups = groups.filter{ $0.members.contains(uid) }
         })
+    }
+
+    @IBAction func showMyGroups(_ sender: Any) {
         self.performSegue(withIdentifier: "profileToMyGroups", sender: Any?.self)
     }
     
