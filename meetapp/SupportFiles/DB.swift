@@ -116,8 +116,8 @@ class DB {
                         long: groupDict["long"] as! String, lat: groupDict["lat"] as! String,
                         members: groupDict["members"] as? [String] ?? [])
                     groups.append(groupElement)
-                    onSuccess(groups)
                 }
+                onSuccess(groups)
             }
         }
         
